@@ -8,8 +8,11 @@
 
 //
 #import "bedrock.h"
+#import "pluginManager.h"
 
 
+//
+//
 int main(int argc, const char * argv[])
 {
     return NSApplicationMain(argc, argv);
@@ -17,13 +20,9 @@ int main(int argc, const char * argv[])
 
 
 //
-
 @interface bedrock ()
 {
 }
-
-//
-@property (strong) IBOutlet NSWindow *window;
 
 @end
 
@@ -39,7 +38,6 @@ int main(int argc, const char * argv[])
     }
 }
 //
-
 
 
 //
@@ -62,23 +60,38 @@ int main(int argc, const char * argv[])
 //
 
 
-//
+
 // Really!  Needs to be here...
 -(void) terminate: (id)sender
 {
     [super terminate:sender];
 }
-//
+
 
 
 //
 //
 -(void) finishLaunching
 {
-    // initialize the drag code...
+    //
     [super finishLaunching];
+    
+    //
+    [[pluginManager factory] bootstrap];
 }
 //
+
+
+//
+#pragma mark bedrock api
+
+//
+//
+//-(void) init_nib :(id) self :(NSString *) nibname
+//{
+//}
+//
+
 
 @end
 

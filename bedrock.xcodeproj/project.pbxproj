@@ -11,7 +11,35 @@
 		A80591892892C5F00023DDD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80591882892C5F00023DDD5 /* Assets.xcassets */; };
 		A805918C2892C5F00023DDD5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A805918A2892C5F00023DDD5 /* MainMenu.xib */; };
 		A80591A32892CA1D0023DDD5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80591A22892CA1D0023DDD5 /* Cocoa.framework */; };
+		A82AFDB82893095D00FACC18 /* workspace.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82AFDB72893095D00FACC18 /* workspace.xib */; };
+		A8CC0635289578DD00C0D2B8 /* workspace.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8FDDFB62892CD6D00AB7629 /* workspace.mm */; };
+		A8FDDFC32892CF8D00AB7629 /* pluginManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8FDDFC22892CF8D00AB7629 /* pluginManager.mm */; };
+		A8FDDFD42892D51300AB7629 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FDDFD32892D51300AB7629 /* Cocoa.framework */; };
+		A8FDDFE02892DAA300AB7629 /* workspaces.bedrock in CopyFiles */ = {isa = PBXBuildFile; fileRef = A8FDDFA72892CCF600AB7629 /* workspaces.bedrock */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A8FDDFDD2892DA9100AB7629 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A805917A2892C5EF0023DDD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8FDDFA62892CCF600AB7629;
+			remoteInfo = workspaces;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A8FDDFDF2892DA9B00AB7629 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A8FDDFE02892DAA300AB7629 /* workspaces.bedrock in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A80591822892C5EF0023DDD5 /* bedrock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bedrock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +50,14 @@
 		A805918D2892C5F00023DDD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A80591902892C5F00023DDD5 /* bedrock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bedrock.entitlements; sourceTree = "<group>"; };
 		A80591A22892CA1D0023DDD5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A82AFDB72893095D00FACC18 /* workspace.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = workspace.xib; sourceTree = "<group>"; };
+		A8FDDFA72892CCF600AB7629 /* workspaces.bedrock */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = workspaces.bedrock; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8FDDFA92892CCF600AB7629 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8FDDFB52892CD6D00AB7629 /* workspace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = workspace.h; sourceTree = "<group>"; };
+		A8FDDFB62892CD6D00AB7629 /* workspace.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = workspace.mm; sourceTree = "<group>"; };
+		A8FDDFC12892CF8D00AB7629 /* pluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pluginManager.h; sourceTree = "<group>"; };
+		A8FDDFC22892CF8D00AB7629 /* pluginManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = pluginManager.mm; sourceTree = "<group>"; };
+		A8FDDFD32892D51300AB7629 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +69,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A8FDDFA42892CCF600AB7629 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8FDDFD42892D51300AB7629 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -40,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				A80591842892C5EF0023DDD5 /* bedrock */,
+				A8FDDFA82892CCF600AB7629 /* workspaces */,
 				A80591832892C5EF0023DDD5 /* Products */,
 				A80591A12892CA1D0023DDD5 /* Frameworks */,
 			);
@@ -49,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				A80591822892C5EF0023DDD5 /* bedrock.app */,
+				A8FDDFA72892CCF600AB7629 /* workspaces.bedrock */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,12 +102,13 @@
 		A80591842892C5EF0023DDD5 /* bedrock */ = {
 			isa = PBXGroup;
 			children = (
-				A80591852892C5EF0023DDD5 /* bedrock.h */,
-				A80591862892C5EF0023DDD5 /* bedrock.mm */,
 				A80591882892C5F00023DDD5 /* Assets.xcassets */,
-				A805918A2892C5F00023DDD5 /* MainMenu.xib */,
 				A805918D2892C5F00023DDD5 /* Info.plist */,
 				A80591902892C5F00023DDD5 /* bedrock.entitlements */,
+				A805918A2892C5F00023DDD5 /* MainMenu.xib */,
+				A8FDDFC02892CF4D00AB7629 /* pluginManager */,
+				A80591852892C5EF0023DDD5 /* bedrock.h */,
+				A80591862892C5EF0023DDD5 /* bedrock.mm */,
 			);
 			path = bedrock;
 			sourceTree = "<group>";
@@ -69,9 +116,30 @@
 		A80591A12892CA1D0023DDD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8FDDFD32892D51300AB7629 /* Cocoa.framework */,
 				A80591A22892CA1D0023DDD5 /* Cocoa.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A8FDDFA82892CCF600AB7629 /* workspaces */ = {
+			isa = PBXGroup;
+			children = (
+				A8FDDFA92892CCF600AB7629 /* Info.plist */,
+				A82AFDB72893095D00FACC18 /* workspace.xib */,
+				A8FDDFB52892CD6D00AB7629 /* workspace.h */,
+				A8FDDFB62892CD6D00AB7629 /* workspace.mm */,
+			);
+			path = workspaces;
+			sourceTree = "<group>";
+		};
+		A8FDDFC02892CF4D00AB7629 /* pluginManager */ = {
+			isa = PBXGroup;
+			children = (
+				A8FDDFC12892CF8D00AB7629 /* pluginManager.h */,
+				A8FDDFC22892CF8D00AB7629 /* pluginManager.mm */,
+			);
+			path = pluginManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,15 +152,34 @@
 				A805917E2892C5EF0023DDD5 /* Sources */,
 				A805917F2892C5EF0023DDD5 /* Frameworks */,
 				A80591802892C5EF0023DDD5 /* Resources */,
+				A8FDDFDF2892DA9B00AB7629 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A8FDDFDE2892DA9100AB7629 /* PBXTargetDependency */,
 			);
 			name = bedrock;
 			productName = bedrock;
 			productReference = A80591822892C5EF0023DDD5 /* bedrock.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A8FDDFA62892CCF600AB7629 /* workspaces */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8FDDFAC2892CCF600AB7629 /* Build configuration list for PBXNativeTarget "workspaces" */;
+			buildPhases = (
+				A8FDDFA32892CCF600AB7629 /* Sources */,
+				A8FDDFA42892CCF600AB7629 /* Frameworks */,
+				A8FDDFA52892CCF600AB7629 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = workspaces;
+			productName = workspaces;
+			productReference = A8FDDFA72892CCF600AB7629 /* workspaces.bedrock */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -103,6 +190,9 @@
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					A80591812892C5EF0023DDD5 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					A8FDDFA62892CCF600AB7629 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
@@ -121,6 +211,7 @@
 			projectRoot = "";
 			targets = (
 				A80591812892C5EF0023DDD5 /* bedrock */,
+				A8FDDFA62892CCF600AB7629 /* workspaces */,
 			);
 		};
 /* End PBXProject section */
@@ -135,6 +226,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A8FDDFA52892CCF600AB7629 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A82AFDB82893095D00FACC18 /* workspace.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -142,11 +241,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8FDDFC32892CF8D00AB7629 /* pluginManager.mm in Sources */,
 				A80591872892C5EF0023DDD5 /* bedrock.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A8FDDFA32892CCF600AB7629 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8CC0635289578DD00C0D2B8 /* workspace.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A8FDDFDE2892DA9100AB7629 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8FDDFA62892CCF600AB7629 /* workspaces */;
+			targetProxy = A8FDDFDD2892DA9100AB7629 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A805918A2892C5F00023DDD5 /* MainMenu.xib */ = {
@@ -210,12 +326,13 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.12;
+				SDKROOT = macosx10.14;
 			};
 			name = Debug;
 		};
@@ -263,11 +380,12 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx10.12;
+				SDKROOT = macosx10.14;
 			};
 			name = Release;
 		};
@@ -311,6 +429,36 @@
 			};
 			name = Release;
 		};
+		A8FDDFAA2892CCF600AB7629 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = X5QUDAATB4;
+				INFOPLIST_FILE = workspaces/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.androidmedia.workspaces;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bedrock;
+			};
+			name = Debug;
+		};
+		A8FDDFAB2892CCF600AB7629 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = X5QUDAATB4;
+				INFOPLIST_FILE = workspaces/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.androidmedia.workspaces;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bedrock;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -328,6 +476,15 @@
 			buildConfigurations = (
 				A80591942892C5F00023DDD5 /* Debug */,
 				A80591952892C5F00023DDD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8FDDFAC2892CCF600AB7629 /* Build configuration list for PBXNativeTarget "workspaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8FDDFAA2892CCF600AB7629 /* Debug */,
+				A8FDDFAB2892CCF600AB7629 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
