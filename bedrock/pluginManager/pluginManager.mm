@@ -7,12 +7,31 @@
 //
 
 //
-#import "bedrock.h"
+#import <dlfcn.h>
+
+//
 #import "pluginManager.h"
+
+//
+#define FACTORY         (@"_ZN%lu%@%lu%@FactoryEP8NSBundleP7bedrock")
+//#define PRINCIPAL_CLASS (@"NSPrincipalClass")
+#define PRINCIPAL_CLASS (@"bedrockClass")
 
 //
 static pluginManager *singleton = NULL;
 
+
+//
+//
+@interface pluginManager ()
+{
+}
+
+//
+-(void) load :(NSBundle *) bundle :(bedrock  *) owner :(void *) handle :(NSString *) className;
+
+
+@end
 
 //
 @implementation pluginManager
@@ -72,114 +91,89 @@ static pluginManager *singleton = NULL;
 }
 //
 
-
 //
 //
--(void) bootstrap
+-(void) load :(NSBundle *) bundle :(bedrock  *) owner :(void *) handle :(NSString *) className
 {
     //
-//    bedrock  *owner = (bedrock *) [NSApplication sharedApplication];
-
-    NSString *type  = @"bedrock";
-    NSString *path  = [[NSBundle mainBundle] builtInPlugInsPath];
+    NSString *factoryName;
+    factoryName = [NSString stringWithFormat:FACTORY, className.length, className, className.length + 7, className];
 
     //
-    for (NSString *object in [NSBundle pathsForResourcesOfType:type inDirectory:path])
+    pluginFactory_t factory;
+    if (!(factory = (pluginFactory_t) dlsym ( handle, [factoryName UTF8String] )))
+        return;
+
+    //
+    bedrockPlugin *plugin;
+    plugin = (bedrockPlugin *) factory ( bundle, owner );
+}
+//
+
+
+//
+//
+-(void) bootstrap :(bedrock  *) owner 
+{
+    //
+    if ([NSThread isMainThread])
+        return;
+
+    //
+    NSString *type    = @"bedrock";
+    NSString *path    = [[NSBundle mainBundle] builtInPlugInsPath];
+
+    //
+    NSArray  *plugins =  [NSBundle pathsForResourcesOfType:type inDirectory:path];
+
+    //
+    [owner enableProgress :[NSNumber numberWithDouble:(double) plugins.count]];
+
+    //
+    for (NSString *plugin in plugins)
     {
-        NSLog (@"\t%@", object);
+        [owner stepProgress :[[plugin lastPathComponent] stringByDeletingPathExtension]];
 
         //
         NSBundle *bundle;
-        if (!(bundle = [NSBundle bundleWithPath:object]))
+        if (!(bundle = [NSBundle bundleWithPath:plugin]))
             continue;
 
         //
         if (![bundle load])
             continue;
 
-//        Class cls;
-//        if (!(cls = [bundle principalClass]))
-//            continue;
-//
-//        //
-//        NSLog (@"\t\t%@ [ %p ]", [bundle principalClass], cls);
-//
-//        NSObject *child;
-//        if (!(child = [cls new]))
-//            continue;
-////        if (!(child = [[cls alloc] init:owner]))
-////            continue;
-//
-//        NSLog (@"\t\t%@", child);
+        //
+        void *handle;
+        if (!(handle = dlopen( [[bundle executablePath] UTF8String], RTLD_LAZY)))
+            continue;
 
         //
-        NSNib *nib;
-        if ((nib = [[NSNib alloc] initWithNibNamed:[bundle objectForInfoDictionaryKey:@"NSMainNibFile"]  bundle:bundle]))
-        {
-            NSLog (@"\t\t%@", nib);
-
-            //
-            NSArray *objects;
-            [nib instantiateWithOwner:NULL topLevelObjects:&objects];
-
-            for (NSObject *co in objects)
-            {
-//                if ([co isKindOfClass:[NSWindow class]])
-//                {
-//                    NSWindow *window;
-//                    window = (NSWindow *) co;
-//
-//                    NSLog (@"%@", [owner mainWindow]);
-//
-//                    [window makeMainWindow];
-//                    [window setIsVisible:true];
-//                    [window makeKeyAndOrderFront:self];
-//
-//                    NSLog (@"%@", [owner mainWindow]);
-//                    continue;
-//                }
-
-                if ([co isKindOfClass:[NSMenu class]])
-                {
-                    NSLog (@"MENU   : %@", co);
-                }
-
-            }
-        }
-
-
-//        if ((nib = [NSNib initWithNibNamed:bundle:bundle]))
+        [self load :bundle :owner :handle :[bundle infoDictionary][PRINCIPAL_CLASS]];
 
         //
-//        [enumerateKeysAndObjectsUsingBlock: ^(NSString *key, NSString *obj, BOOL *stop)
-//            {
-//                NSLog (@"%@ : %@ [ %p ]", key, obj, NSSelectorFromString(obj));
-//
-//                [owner registerMenu :NULL :NULL : NSSelectorFromString(obj)];
-//            }
-//        ];
+        dlclose( handle );
 
-
-//        //
-//        NSBundle *bundle;
-//        if (!(bundle = [NSBundle bundleWithPath:object]))
-//            continue;
+        //
+//        NSNib *nib;
+//        if ((nib = [[NSNib alloc] initWithNibNamed:[bundle objectForInfoDictionaryKey:@"NSMainNibFile"]  bundle:bundle]))
+//        {
+//            NSLog (@"\t\t%@", nib);
 //
-//        //
-//        if (![bundle load])
-//            continue;
-//
-//        //
-//        void *handle;
-//        if (!(handle = dlopen( [[bundle executablePath] UTF8String], RTLD_LAZY)))
-//            continue;
-//
-//        //
-//        [self bundleLoad:handle :bundle];
-//
-//        //
-//        dlclose( handle );
+//            //
+////            NSArray *objects;
+////            [nib instantiateWithOwner:NULL topLevelObjects:&objects];
+//        }
+sleep (1);
     }
+
+
+    //
+    [owner secureProgress];
+sleep (1);
+
+    //
+    [owner secureSplash];
 }
 //
 

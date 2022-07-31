@@ -12,13 +12,43 @@
 		A805918C2892C5F00023DDD5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A805918A2892C5F00023DDD5 /* MainMenu.xib */; };
 		A80591A32892CA1D0023DDD5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80591A22892CA1D0023DDD5 /* Cocoa.framework */; };
 		A82AFDB82893095D00FACC18 /* workspace.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82AFDB72893095D00FACC18 /* workspace.xib */; };
-		A8CC0635289578DD00C0D2B8 /* workspace.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8FDDFB62892CD6D00AB7629 /* workspace.mm */; };
+		A8CC06402895BE8A00C0D2B8 /* splashDragon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8CC063F2895BE8A00C0D2B8 /* splashDragon.png */; };
+		A8CC06442895C1A300C0D2B8 /* splashGears.png in Resources */ = {isa = PBXBuildFile; fileRef = A8CC06432895C1A300C0D2B8 /* splashGears.png */; };
+		A8CC06512895D64B00C0D2B8 /* workspace.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8CC06502895D64B00C0D2B8 /* workspace.mm */; };
+		A8CC06622895E10800C0D2B8 /* api.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8CC06612895E10800C0D2B8 /* api.mm */; };
+		A8CC066C2895E1B900C0D2B8 /* libplugin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CC065D2895E10800C0D2B8 /* libplugin.dylib */; };
+		A8CC066D2895E1B900C0D2B8 /* libplugin.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A8CC065D2895E10800C0D2B8 /* libplugin.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A8CC06752895E21500C0D2B8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80591A22892CA1D0023DDD5 /* Cocoa.framework */; };
+		A8CC06812895E28200C0D2B8 /* libplugin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CC065D2895E10800C0D2B8 /* libplugin.dylib */; };
+		A8CC06822895E28200C0D2B8 /* libplugin.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A8CC065D2895E10800C0D2B8 /* libplugin.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A8CC068C2896C72600C0D2B8 /* projectView.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8CC068B2896C72600C0D2B8 /* projectView.mm */; };
+		A8CC06902896C7FB00C0D2B8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80591A22892CA1D0023DDD5 /* Cocoa.framework */; };
 		A8FDDFC32892CF8D00AB7629 /* pluginManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8FDDFC22892CF8D00AB7629 /* pluginManager.mm */; };
-		A8FDDFD42892D51300AB7629 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FDDFD32892D51300AB7629 /* Cocoa.framework */; };
 		A8FDDFE02892DAA300AB7629 /* workspaces.bedrock in CopyFiles */ = {isa = PBXBuildFile; fileRef = A8FDDFA72892CCF600AB7629 /* workspaces.bedrock */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A8CC066E2895E1B900C0D2B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A805917A2892C5EF0023DDD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8CC065C2895E10800C0D2B8;
+			remoteInfo = plugin;
+		};
+		A8CC06782895E22200C0D2B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A805917A2892C5EF0023DDD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8CC065C2895E10800C0D2B8;
+			remoteInfo = plugin;
+		};
+		A8CC06832895E28200C0D2B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A805917A2892C5EF0023DDD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8CC065C2895E10800C0D2B8;
+			remoteInfo = plugin;
+		};
 		A8FDDFDD2892DA9100AB7629 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A805917A2892C5EF0023DDD5 /* Project object */;
@@ -29,6 +59,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		A8CC06702895E1B900C0D2B8 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A8CC066D2895E1B900C0D2B8 /* libplugin.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8CC06852895E28300C0D2B8 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A8CC06822895E28200C0D2B8 /* libplugin.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A8FDDFDF2892DA9B00AB7629 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -51,10 +103,17 @@
 		A80591902892C5F00023DDD5 /* bedrock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bedrock.entitlements; sourceTree = "<group>"; };
 		A80591A22892CA1D0023DDD5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A82AFDB72893095D00FACC18 /* workspace.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = workspace.xib; sourceTree = "<group>"; };
+		A8CC063F2895BE8A00C0D2B8 /* splashDragon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashDragon.png; sourceTree = "<group>"; };
+		A8CC06432895C1A300C0D2B8 /* splashGears.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashGears.png; sourceTree = "<group>"; };
+		A8CC06502895D64B00C0D2B8 /* workspace.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = workspace.mm; sourceTree = "<group>"; };
+		A8CC06562895E01000C0D2B8 /* api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = api.h; sourceTree = "<group>"; };
+		A8CC065D2895E10800C0D2B8 /* libplugin.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libplugin.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8CC06612895E10800C0D2B8 /* api.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = api.mm; sourceTree = "<group>"; };
+		A8CC068A2896C72600C0D2B8 /* projectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = projectView.h; sourceTree = "<group>"; };
+		A8CC068B2896C72600C0D2B8 /* projectView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = projectView.mm; sourceTree = "<group>"; };
 		A8FDDFA72892CCF600AB7629 /* workspaces.bedrock */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = workspaces.bedrock; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8FDDFA92892CCF600AB7629 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8FDDFB52892CD6D00AB7629 /* workspace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = workspace.h; sourceTree = "<group>"; };
-		A8FDDFB62892CD6D00AB7629 /* workspace.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = workspace.mm; sourceTree = "<group>"; };
 		A8FDDFC12892CF8D00AB7629 /* pluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pluginManager.h; sourceTree = "<group>"; };
 		A8FDDFC22892CF8D00AB7629 /* pluginManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = pluginManager.mm; sourceTree = "<group>"; };
 		A8FDDFD32892D51300AB7629 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -66,6 +125,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A80591A32892CA1D0023DDD5 /* Cocoa.framework in Frameworks */,
+				A8CC06812895E28200C0D2B8 /* libplugin.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8CC065B2895E10800C0D2B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8CC06752895E21500C0D2B8 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8FDDFD42892D51300AB7629 /* Cocoa.framework in Frameworks */,
+				A8CC06902896C7FB00C0D2B8 /* Cocoa.framework in Frameworks */,
+				A8CC066C2895E1B900C0D2B8 /* libplugin.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +152,7 @@
 		A80591792892C5EF0023DDD5 = {
 			isa = PBXGroup;
 			children = (
+				A8CC065E2895E10800C0D2B8 /* bedrock_api */,
 				A80591842892C5EF0023DDD5 /* bedrock */,
 				A8FDDFA82892CCF600AB7629 /* workspaces */,
 				A80591832892C5EF0023DDD5 /* Products */,
@@ -95,6 +165,7 @@
 			children = (
 				A80591822892C5EF0023DDD5 /* bedrock.app */,
 				A8FDDFA72892CCF600AB7629 /* workspaces.bedrock */,
+				A8CC065D2895E10800C0D2B8 /* libplugin.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +173,7 @@
 		A80591842892C5EF0023DDD5 /* bedrock */ = {
 			isa = PBXGroup;
 			children = (
+				A8CC063E2895BE6100C0D2B8 /* images */,
 				A80591882892C5F00023DDD5 /* Assets.xcassets */,
 				A805918D2892C5F00023DDD5 /* Info.plist */,
 				A80591902892C5F00023DDD5 /* bedrock.entitlements */,
@@ -122,13 +194,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A8CC063E2895BE6100C0D2B8 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A8CC06432895C1A300C0D2B8 /* splashGears.png */,
+				A8CC063F2895BE8A00C0D2B8 /* splashDragon.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		A8CC065E2895E10800C0D2B8 /* bedrock_api */ = {
+			isa = PBXGroup;
+			children = (
+				A8CC06562895E01000C0D2B8 /* api.h */,
+				A8CC06612895E10800C0D2B8 /* api.mm */,
+			);
+			path = bedrock_api;
+			sourceTree = "<group>";
+		};
 		A8FDDFA82892CCF600AB7629 /* workspaces */ = {
 			isa = PBXGroup;
 			children = (
 				A8FDDFA92892CCF600AB7629 /* Info.plist */,
 				A82AFDB72893095D00FACC18 /* workspace.xib */,
+				A8CC068A2896C72600C0D2B8 /* projectView.h */,
+				A8CC068B2896C72600C0D2B8 /* projectView.mm */,
 				A8FDDFB52892CD6D00AB7629 /* workspace.h */,
-				A8FDDFB62892CD6D00AB7629 /* workspace.mm */,
+				A8CC06502895D64B00C0D2B8 /* workspace.mm */,
 			);
 			path = workspaces;
 			sourceTree = "<group>";
@@ -144,6 +236,16 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		A8CC06592895E10800C0D2B8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		A80591812892C5EF0023DDD5 /* bedrock */ = {
 			isa = PBXNativeTarget;
@@ -153,16 +255,36 @@
 				A805917F2892C5EF0023DDD5 /* Frameworks */,
 				A80591802892C5EF0023DDD5 /* Resources */,
 				A8FDDFDF2892DA9B00AB7629 /* CopyFiles */,
+				A8CC06852895E28300C0D2B8 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A8CC06792895E22200C0D2B8 /* PBXTargetDependency */,
 				A8FDDFDE2892DA9100AB7629 /* PBXTargetDependency */,
+				A8CC06842895E28200C0D2B8 /* PBXTargetDependency */,
 			);
 			name = bedrock;
 			productName = bedrock;
 			productReference = A80591822892C5EF0023DDD5 /* bedrock.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A8CC065C2895E10800C0D2B8 /* plugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8CC06632895E10800C0D2B8 /* Build configuration list for PBXNativeTarget "plugin" */;
+			buildPhases = (
+				A8CC06592895E10800C0D2B8 /* Headers */,
+				A8CC065A2895E10800C0D2B8 /* Sources */,
+				A8CC065B2895E10800C0D2B8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = plugin;
+			productName = plugin;
+			productReference = A8CC065D2895E10800C0D2B8 /* libplugin.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
 		};
 		A8FDDFA62892CCF600AB7629 /* workspaces */ = {
 			isa = PBXNativeTarget;
@@ -171,10 +293,12 @@
 				A8FDDFA32892CCF600AB7629 /* Sources */,
 				A8FDDFA42892CCF600AB7629 /* Frameworks */,
 				A8FDDFA52892CCF600AB7629 /* Resources */,
+				A8CC06702895E1B900C0D2B8 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A8CC066F2895E1B900C0D2B8 /* PBXTargetDependency */,
 			);
 			name = workspaces;
 			productName = workspaces;
@@ -190,6 +314,9 @@
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					A80591812892C5EF0023DDD5 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					A8CC065C2895E10800C0D2B8 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 					A8FDDFA62892CCF600AB7629 = {
@@ -210,6 +337,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				A8CC065C2895E10800C0D2B8 /* plugin */,
 				A80591812892C5EF0023DDD5 /* bedrock */,
 				A8FDDFA62892CCF600AB7629 /* workspaces */,
 			);
@@ -223,6 +351,8 @@
 			files = (
 				A80591892892C5F00023DDD5 /* Assets.xcassets in Resources */,
 				A805918C2892C5F00023DDD5 /* MainMenu.xib in Resources */,
+				A8CC06402895BE8A00C0D2B8 /* splashDragon.png in Resources */,
+				A8CC06442895C1A300C0D2B8 /* splashGears.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,17 +376,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A8CC065A2895E10800C0D2B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8CC06622895E10800C0D2B8 /* api.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A8FDDFA32892CCF600AB7629 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8CC0635289578DD00C0D2B8 /* workspace.mm in Sources */,
+				A8CC068C2896C72600C0D2B8 /* projectView.mm in Sources */,
+				A8CC06512895D64B00C0D2B8 /* workspace.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A8CC066F2895E1B900C0D2B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8CC065C2895E10800C0D2B8 /* plugin */;
+			targetProxy = A8CC066E2895E1B900C0D2B8 /* PBXContainerItemProxy */;
+		};
+		A8CC06792895E22200C0D2B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8CC065C2895E10800C0D2B8 /* plugin */;
+			targetProxy = A8CC06782895E22200C0D2B8 /* PBXContainerItemProxy */;
+		};
+		A8CC06842895E28200C0D2B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8CC065C2895E10800C0D2B8 /* plugin */;
+			targetProxy = A8CC06832895E28200C0D2B8 /* PBXContainerItemProxy */;
+		};
 		A8FDDFDE2892DA9100AB7629 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A8FDDFA62892CCF600AB7629 /* workspaces */;
@@ -328,7 +482,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -382,7 +536,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx10.14;
@@ -426,6 +580,32 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.androidmedia.bedrock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A8CC06642895E10800C0D2B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X5QUDAATB4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A8CC06652895E10800C0D2B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X5QUDAATB4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -476,6 +656,15 @@
 			buildConfigurations = (
 				A80591942892C5F00023DDD5 /* Debug */,
 				A80591952892C5F00023DDD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8CC06632895E10800C0D2B8 /* Build configuration list for PBXNativeTarget "plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8CC06642895E10800C0D2B8 /* Debug */,
+				A8CC06652895E10800C0D2B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

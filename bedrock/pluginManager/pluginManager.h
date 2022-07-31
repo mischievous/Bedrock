@@ -6,7 +6,12 @@
 //  Copyright © 2021 Alexandra Beebe. All rights reserved.
 //
 
+//
 #import <Foundation/Foundation.h>
+
+//
+#import "api.h"
+
 
 //
 @interface pluginManager : NSObject
@@ -17,7 +22,7 @@
 +(id  )     factory;
 
 //
--(void)     bootstrap;
+-(void)     bootstrap :(bedrock *) owner;
 
 
 

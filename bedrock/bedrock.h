@@ -11,10 +11,24 @@
 {
 }
 
+//
+-(void    ) actionMenu :(NSMenuItem *) sender;
 
-#pragma mark bedrock api
+#pragma mark public bedrock api
 
-//-(void) init_nib :(id) self :(NSString *) nibname;
+// splash
+-(void    ) secureSplash;
+
+// status 
+-(void    ) secureProgress;
+-(void    ) enableProgress :(NSNumber *) count;
+-(void    ) stepProgress   :(NSString *) message;
+
+// window/view
+-(id      ) addView        :(NSNib    *) nib;
+
+// menu
+-(NSMenu *) accessMenu;
 
 @end
 
