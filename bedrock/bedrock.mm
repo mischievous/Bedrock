@@ -31,7 +31,7 @@ int main(int argc, const char * argv[])
 //
 #pragma mark private bedrock api
 -(uint64_t) mainThread   :(SEL) selector :(id) object;
--(void    ) createWindow :(NSView *) contentView;
+-(id      ) createWindow :(NSViewController *) ctrler;
 
 @end
 
@@ -95,8 +95,8 @@ int main(int argc, const char * argv[])
 //
 -(void) actionMenu:(NSMenuItem *) sender
 {
-    callback_plugin *callback;
-    if (!(callback = (callback_plugin *) sender.tag))
+    callback_plugin *callback = NULL;
+    if ((callback = (callback_plugin *) sender.tag))
         (*callback) ();
 }
 //
@@ -122,23 +122,29 @@ int main(int argc, const char * argv[])
 
 //
 //
--(void)     createWindow :(NSView *)contentView
+-(id  )     createWindow :(NSViewController *)ctrler
 {
+//
+    NSLog (@"%s", __FUNCTION__);
+
 //    const NSWindowStyleMask styleMask = NSWindowStyleMaskBorderless | NSWindowStyleMaskFullSizeContentView;
     const NSWindowStyleMask styleMask = NSWindowStyleMaskTitled | NSWindowStyleMaskClosable | NSWindowStyleMaskMiniaturizable | NSWindowStyleMaskResizable;
 
     NSWindow *child;
-    if (!(child = [[NSWindow alloc] initWithContentRect:contentView.frame styleMask:styleMask backing:NSBackingStoreBuffered defer:NO]))
-        return;
+    if (!(child = [[NSWindow alloc] initWithContentRect:ctrler.view.frame styleMask:styleMask backing:NSBackingStoreBuffered defer:NO]))
+        return NULL;
 
     //
-    child.contentView     = contentView;
+    child.contentView     = ctrler.view;
 
     //
-    child.title           = @"Project";
+//    child.title           = @"Project";
 
     //
     [child makeKeyAndOrderFront:self];
+
+    //
+    return child;
 }
 //
 
@@ -219,46 +225,80 @@ int main(int argc, const char * argv[])
 
 //
 //
--(id  ) addView        :(NSNib *)nib
+-(id  ) addView        : (const char *) nibName :(NSBundle *) bundle
 {
-    //
-    if (!nib)
-        return NULL;
-
     if ( ![NSThread isMainThread] )
     {
         __block id rtn;
         dispatch_sync (dispatch_get_main_queue(), ^{
-            rtn = [ self addView:nib ];
+            rtn = [ self addView :nibName :bundle];
         });
 
         return rtn;
     }
 
     //
-    NSArray *objects;
-    if (![nib instantiateWithOwner:NULL topLevelObjects:&objects])
-        return NULL;
-
-    //
-    NSViewController *ctrler = NULL;
-
-    for (id object in objects)
+    NSViewController *ctrler;
+    if ((ctrler = [[NSViewController alloc] initWithNibName:[NSString stringWithUTF8String:nibName] bundle:bundle]))
     {
-        if (![object isKindOfClass:[NSViewController class]])
-            continue;
+        NSLog (@"%@", ctrler);
+        NSLog (@"%@", ctrler.view);
+
+//        //
+//        if ([ctrler.view respondsToSelector:@selector (bootstrap)])
+//            [ctrler.view performSelector:@selector(bootstrap) withObject:NULL];
 
         //
-        ctrler = (NSViewController *) object;
-        if (ctrler.view == NULL)
-        {
-            ctrler = NULL;
-            continue;
-        }
-
-        [self createWindow:ctrler.view];
+        [self createWindow:ctrler];
     }
 
+
+#if 0
+    Class cls;
+    if (!(cls = NSClassFromString(@"projectView")))
+        return NULL;
+
+    NSViewController *ctrler = NULL;
+    if ((ctrler = [[cls alloc] initWithNibName:[NSString stringWithUTF8String:nibName] bundle:[NSBundle mainBundle]]))
+    {
+        NSLog (@"%@", ctrler);
+        NSLog (@"%@", ctrler.view);
+
+        [self createWindow:ctrler];
+    }
+#endif
+
+
+//
+//    NSNib *nib;
+//    if (!(nib = [[NSNib alloc] initWithNibNamed:[NSString stringWithUTF8String:nibName] bundle:bundle]))
+//        return NULL;
+//
+//    //
+//    NSArray *objects;
+//    if (![nib instantiateWithOwner:NULL topLevelObjects:&objects])
+//        return NULL;
+//
+//    //
+//    NSViewController *ctrler = NULL;
+//
+//    for (id object in objects)
+//    {
+//        if (![object isKindOfClass:[NSViewController class]])
+//            continue;
+//
+//        //
+//        ctrler = (NSViewController *) object;
+//        if (ctrler.view == NULL)
+//        {
+//            ctrler = NULL;
+//            continue;
+//        }
+//
+//        [self createWindow:ctrler];
+//        break;
+//    }
+//
     return ctrler;
 }
 //
@@ -285,6 +325,59 @@ int main(int argc, const char * argv[])
     return self.mainMenu;
 }
 //
+
+
+//
+//
+-(bedrockProject *) addProject:(const char *)projectName
+{
+    return new bedrockProject (projectName);
+}
+//
+
+
+#if 0
+//
+//
+-(NSTreeController *) newProject :(NSString *) projectName
+{
+    NSTreeController *project = NULL;
+    if ((project = [[NSTreeController alloc] init]))
+    {
+        project.childrenKeyPath = @"children";
+    }
+
+    return project;
+}
+//
+
+
+//
+//
+-(id  ) addTarget :(NSTreeController *) project :(NSString *) target
+{
+    [project addObject:@{@"title" : target, @"children" : [NSMutableArray arrayWithCapacity:0]}];
+    return [project.content lastObject];
+}
+//
+
+//
+//
+-(id  ) addObject :(NSTreeController *) project :(NSString *) target :(NSString *) object
+{
+    for (NSDictionary *data in project.content)
+    {
+        if ([data[@"title"] compare:target] != NSOrderedSame)
+            continue;
+
+        [data[@"children"] addObject:@{@"title" : object, @"children" : [NSMutableArray arrayWithCapacity:0]}];
+        return [data[@"children"] lastObject];
+    }
+
+    return NULL;
+}
+//
+#endif
 
 @end
 

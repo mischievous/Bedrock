@@ -11,7 +11,11 @@
 		A80591892892C5F00023DDD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80591882892C5F00023DDD5 /* Assets.xcassets */; };
 		A805918C2892C5F00023DDD5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A805918A2892C5F00023DDD5 /* MainMenu.xib */; };
 		A80591A32892CA1D0023DDD5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80591A22892CA1D0023DDD5 /* Cocoa.framework */; };
-		A82AFDB82893095D00FACC18 /* workspace.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82AFDB72893095D00FACC18 /* workspace.xib */; };
+		A82AFDB82893095D00FACC18 /* project.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82AFDB72893095D00FACC18 /* project.xib */; };
+		A85A6E692899BE0400537908 /* cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85A6E682899BE0400537908 /* cell.xib */; };
+		A85A6E722899D12600537908 /* cellView.mm in Sources */ = {isa = PBXBuildFile; fileRef = A85A6E712899D12600537908 /* cellView.mm */; };
+		A85E530228980A1D0000D08C /* projectObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A85E52FC2897FD650000D08C /* projectObject.cpp */; };
+		A85E530528980A210000D08C /* bedrockProject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A85E52F72897FB040000D08C /* bedrockProject.cpp */; };
 		A8CC06402895BE8A00C0D2B8 /* splashDragon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8CC063F2895BE8A00C0D2B8 /* splashDragon.png */; };
 		A8CC06442895C1A300C0D2B8 /* splashGears.png in Resources */ = {isa = PBXBuildFile; fileRef = A8CC06432895C1A300C0D2B8 /* splashGears.png */; };
 		A8CC06512895D64B00C0D2B8 /* workspace.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8CC06502895D64B00C0D2B8 /* workspace.mm */; };
@@ -102,7 +106,14 @@
 		A805918D2892C5F00023DDD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A80591902892C5F00023DDD5 /* bedrock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bedrock.entitlements; sourceTree = "<group>"; };
 		A80591A22892CA1D0023DDD5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		A82AFDB72893095D00FACC18 /* workspace.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = workspace.xib; sourceTree = "<group>"; };
+		A82AFDB72893095D00FACC18 /* project.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = project.xib; sourceTree = "<group>"; };
+		A85A6E682899BE0400537908 /* cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cell.xib; sourceTree = "<group>"; };
+		A85A6E702899D12600537908 /* cellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cellView.h; sourceTree = "<group>"; };
+		A85A6E712899D12600537908 /* cellView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = cellView.mm; sourceTree = "<group>"; };
+		A85E52F72897FB040000D08C /* bedrockProject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bedrockProject.cpp; sourceTree = "<group>"; };
+		A85E52F82897FB040000D08C /* bedrockProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bedrockProject.h; sourceTree = "<group>"; };
+		A85E52FC2897FD650000D08C /* projectObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = projectObject.cpp; sourceTree = "<group>"; };
+		A85E52FD2897FD650000D08C /* projectObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = projectObject.h; sourceTree = "<group>"; };
 		A8CC063F2895BE8A00C0D2B8 /* splashDragon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashDragon.png; sourceTree = "<group>"; };
 		A8CC06432895C1A300C0D2B8 /* splashGears.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashGears.png; sourceTree = "<group>"; };
 		A8CC06502895D64B00C0D2B8 /* workspace.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = workspace.mm; sourceTree = "<group>"; };
@@ -194,6 +205,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A85A6E6C2899D0E300537908 /* project */ = {
+			isa = PBXGroup;
+			children = (
+				A82AFDB72893095D00FACC18 /* project.xib */,
+				A8CC068A2896C72600C0D2B8 /* projectView.h */,
+				A8CC068B2896C72600C0D2B8 /* projectView.mm */,
+			);
+			path = project;
+			sourceTree = "<group>";
+		};
+		A85A6E6E2899D10700537908 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				A85A6E682899BE0400537908 /* cell.xib */,
+				A85A6E702899D12600537908 /* cellView.h */,
+				A85A6E712899D12600537908 /* cellView.mm */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		A85E52F62897FAE50000D08C /* project */ = {
+			isa = PBXGroup;
+			children = (
+				A85E52FD2897FD650000D08C /* projectObject.h */,
+				A85E52FC2897FD650000D08C /* projectObject.cpp */,
+				A85E52F82897FB040000D08C /* bedrockProject.h */,
+				A85E52F72897FB040000D08C /* bedrockProject.cpp */,
+			);
+			path = project;
+			sourceTree = "<group>";
+		};
 		A8CC063E2895BE6100C0D2B8 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +248,7 @@
 		A8CC065E2895E10800C0D2B8 /* bedrock_api */ = {
 			isa = PBXGroup;
 			children = (
+				A85E52F62897FAE50000D08C /* project */,
 				A8CC06562895E01000C0D2B8 /* api.h */,
 				A8CC06612895E10800C0D2B8 /* api.mm */,
 			);
@@ -215,10 +258,9 @@
 		A8FDDFA82892CCF600AB7629 /* workspaces */ = {
 			isa = PBXGroup;
 			children = (
+				A85A6E6E2899D10700537908 /* cell */,
+				A85A6E6C2899D0E300537908 /* project */,
 				A8FDDFA92892CCF600AB7629 /* Info.plist */,
-				A82AFDB72893095D00FACC18 /* workspace.xib */,
-				A8CC068A2896C72600C0D2B8 /* projectView.h */,
-				A8CC068B2896C72600C0D2B8 /* projectView.mm */,
 				A8FDDFB52892CD6D00AB7629 /* workspace.h */,
 				A8CC06502895D64B00C0D2B8 /* workspace.mm */,
 			);
@@ -360,7 +402,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A82AFDB82893095D00FACC18 /* workspace.xib in Resources */,
+				A82AFDB82893095D00FACC18 /* project.xib in Resources */,
+				A85A6E692899BE0400537908 /* cell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +423,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85E530528980A210000D08C /* bedrockProject.cpp in Sources */,
+				A85E530228980A1D0000D08C /* projectObject.cpp in Sources */,
 				A8CC06622895E10800C0D2B8 /* api.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85A6E722899D12600537908 /* cellView.mm in Sources */,
 				A8CC068C2896C72600C0D2B8 /* projectView.mm in Sources */,
 				A8CC06512895D64B00C0D2B8 /* workspace.mm in Sources */,
 			);

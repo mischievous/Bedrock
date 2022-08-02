@@ -25,19 +25,20 @@ class bedrockPlugin
 {
     //
     private:
-        NSBundle *bundle;
-        bedrock  *owner;
 
     //
     protected:
+        NSBundle *bundle;
+        bedrock  *owner;
 
         // windows/views
-                id   addView   ( const char *nibName );
+                id              addView    ( const char *nibName );
 
         // menus
-                void addMenu   ( callback_plugin *callback, const std::vector <std::string> path );
+                void            addMenu    ( callback_plugin *callback, const std::vector <std::string> path );
 
         // projects
+                bedrockProject *addProject ( const char *path );
 //                void addTarget ( 
 
     //

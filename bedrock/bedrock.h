@@ -5,30 +5,43 @@
 //  Created by Alexandra Beebe on 7/28/22.
 //
 
+//
 #import <Cocoa/Cocoa.h>
 
+//
+#import "bedrockProject.h"
+
+//
 @interface bedrock : NSApplication
 {
 }
 
 //
--(void    ) actionMenu :(NSMenuItem *) sender;
+-(void            ) actionMenu :(NSMenuItem *) sender;
 
 #pragma mark public bedrock api
 
 // splash
--(void    ) secureSplash;
+-(void            ) secureSplash;
 
 // status 
--(void    ) secureProgress;
--(void    ) enableProgress :(NSNumber *) count;
--(void    ) stepProgress   :(NSString *) message;
+-(void            ) secureProgress;
+-(void            ) enableProgress :(NSNumber *) count;
+-(void            ) stepProgress   :(NSString *) message;
 
 // window/view
--(id      ) addView        :(NSNib    *) nib;
+-(id              ) addView        :(const char *) nibName    :(NSBundle *) bundle;
 
 // menu
--(NSMenu *) accessMenu;
+-(NSMenu         *) accessMenu;
+
+// projects
+-(bedrockProject *) addProject     :(const char *) projectName;
+
+//-(NSTreeController *) newProject     :(NSString *) projectName;
+//-(id                ) addTarget      :(NSTreeController *) project :(NSString *) target;
+//-(id                ) addObject      :(NSTreeController *) project :(NSString *) target :(NSString *) object;
+
 
 @end
 

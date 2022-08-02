@@ -25,6 +25,9 @@ static pluginManager *singleton = NULL;
 //
 @interface pluginManager ()
 {
+    // Fucking APPLE!
+//    NSMutableArray *bundles;
+
 }
 
 //
@@ -80,6 +83,9 @@ static pluginManager *singleton = NULL;
         {
             //
             singleton = self;
+
+            //
+//            bundles   = [NSMutableArray arrayWithCapacity:0];
 
             //
             NSLog (@"%s : %@", __FUNCTION__, self);
@@ -155,15 +161,7 @@ static pluginManager *singleton = NULL;
         dlclose( handle );
 
         //
-//        NSNib *nib;
-//        if ((nib = [[NSNib alloc] initWithNibNamed:[bundle objectForInfoDictionaryKey:@"NSMainNibFile"]  bundle:bundle]))
-//        {
-//            NSLog (@"\t\t%@", nib);
-//
-//            //
-////            NSArray *objects;
-////            [nib instantiateWithOwner:NULL topLevelObjects:&objects];
-//        }
+//        [bundles addObject:bundle];
 sleep (1);
     }
 
@@ -174,6 +172,9 @@ sleep (1);
 
     //
     [owner secureSplash];
+
+
+//NSLog (@"%@", bundles);
 }
 //
 

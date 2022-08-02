@@ -28,9 +28,8 @@ bedrockPlugin::~bedrockPlugin ( void )
 //
 id   bedrockPlugin::addView ( const char *nibName )
 {
-    return [owner addView:[[NSNib alloc] initWithNibNamed:[NSString stringWithUTF8String:nibName] bundle:bundle]];
+    return [owner addView :nibName :bundle];
 }
-
 //
 
 
@@ -69,5 +68,14 @@ void bedrockPlugin::addMenu ( callback_plugin *callback, const std::vector <std:
         //
         menu = item.submenu;
     }
+}
+//
+
+
+//
+//
+bedrockProject *bedrockPlugin::addProject ( const char *path )
+{
+    return [owner addProject:path];
 }
 //
