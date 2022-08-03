@@ -138,9 +138,6 @@ int main(int argc, const char * argv[])
     child.contentView     = ctrler.view;
 
     //
-//    child.title           = @"Project";
-
-    //
     [child makeKeyAndOrderFront:self];
 
     //

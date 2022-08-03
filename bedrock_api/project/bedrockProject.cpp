@@ -5,6 +5,10 @@
 //  Created by Alexandra Beebe on 8/1/22.
 //
 
+//
+#include <string.h>
+
+//
 #include "bedrockProject.h"
 
 
@@ -12,7 +16,13 @@
 //
                bedrockProject:: bedrockProject ( const char *path ) : _root_(NULL)
 {
-    _root_ = addObject (PO_ROOT, "NAME", NULL);
+    memset (_name_, 0x0, sizeof(_name_));
+
+    //
+    snprintf (_name_, sizeof (_name_), "%s", strrchr (path, '/') + 1);
+
+    //
+    _root_ = addObject (PO_ROOT, _name_, path, NULL);
 }
 //
 
@@ -27,19 +37,29 @@
 
 //
 //
-projectObject *bedrockProject:: addObject      ( uint64_t type, const char *name, objects_t *dependancies )
+projectObject *bedrockProject:: addObject      ( uint64_t type, const char *name, const char *path, objects_t *dependancies )
 {
     projectObject *object;
-    if (!(object = new projectObject ( type, name, dependancies )))
+    if (!(object = new projectObject ( type, name, path, dependancies )))
         return NULL;
 
-    if (_root_)
-        _root_->child ( object );
+    //
+    _master_.push_back ( object );
 
-//    switch (type)
-//    {
-//        case PO_TARGET : targets.push_back (object); break;
-//    }
+    if (_root_)
+    {
+        switch (type)
+        {
+            case PO_TARGET : _root_->child ( object ); break;
+        }
+    }
+
+    //
+    if (dependancies)
+    {
+        for (projectObject *child : *dependancies )
+            object->child (child);
+    }
 
     return object;
 }

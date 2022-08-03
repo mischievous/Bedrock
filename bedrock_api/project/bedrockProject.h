@@ -15,14 +15,13 @@
 class bedrockProject
 {
     private   :
-        char name [ 1024 ];
-        char path [ 1024 ];
+        char           _name_ [  256 ];
 
         //
         projectObject *_root_;
-//        objects_t      master;
-//        objects_t      targets; // Linking
-//        objects_t      source;  // Source files.
+
+        //
+        objects_t      _master_;
 
     protected :
 
@@ -32,8 +31,11 @@ class bedrockProject
         virtual                ~bedrockProject ( void );
 
                  //
+                 const char    *name           ( void ) { return _name_; }
+
+                 //
                  void          *root           ( void ) { return (void *) _root_; }
-                 projectObject *addObject      ( uint64_t type, const char *name, objects_t *dependancies = NULL );
+                 projectObject *addObject      ( uint64_t type, const char *name, const char *path = NULL, objects_t *dependancies = NULL );
 
         //
 //                 uint64_t       count ( void         ) { return targets.size(); }

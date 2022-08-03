@@ -12,6 +12,7 @@
 #include <vector>
 #include <string>
 
+
 //
 class projectObject;
 typedef std::vector <projectObject *> objects_t;
@@ -42,7 +43,8 @@ class projectObject
     private   :
         uint64_t  type;
         char      name        [256];
-        char     *image;
+        char      path        [256];
+//        char     *image;
         void     *cell;
 
         //
@@ -52,25 +54,31 @@ class projectObject
         objects_t dependancies;
         options_t options;
 
+        //
+        static   bool      compare ( projectObject *lhs, projectObject *rhs );
 
+        
     protected :
 
 
     public    :
-                       projectObject ( uint64_t type, const char *name, objects_t *dependancies );
+                       projectObject ( uint64_t type, const char *name, const char *path = NULL, objects_t *dependancies = NULL );
         virtual       ~projectObject ( void );
 
         //
-                 uint64_t  count ( void                  ) { return children.size(); }
-                 void      child ( projectObject *object ) { children.push_back(object); }
-                 void     *child ( uint64_t idx          ) { if (idx >= children.size()) return NULL; return (void *) children[idx]; }
+                 uint64_t  count     ( void                  ) { return children.size(); }
+                 void      child     ( projectObject *object ) { children.push_back(object); }
+                 void     *child     ( uint64_t idx          ) { if (idx >= children.size()) return NULL; return (void *) children[idx]; }
 
         //
-                 char     *title ( void                  ) { return name; }
+                 void      sort      ( void                  );
 
         //
-                 void     *view  ( void                  ) { return cell; }
-                 void      view  ( void *view            ) { cell = view; }
+                 char     *title     ( void                  ) { return name; }
+
+        //
+                 void     *view      ( void                  ) { return cell; }
+                 void      view      ( void *view            ) { cell = view; }
 };
 
 #endif /* projectObject_hpp */
