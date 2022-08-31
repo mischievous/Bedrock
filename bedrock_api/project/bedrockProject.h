@@ -35,7 +35,7 @@ class bedrockProject
 
                  //
                  void          *root           ( void ) { return (void *) _root_; }
-                 projectObject *addObject      ( uint64_t type, const char *name, const char *path = NULL, objects_t *dependancies = NULL );
+                 projectObject *addObject      ( uint64_t type, const char *name, const char *path = NULL, objects_t *dependancies = NULL, uint64_t uuid = 0 );
 
         //
 //                 uint64_t       count ( void         ) { return targets.size(); }

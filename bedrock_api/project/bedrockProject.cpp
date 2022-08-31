@@ -37,7 +37,7 @@
 
 //
 //
-projectObject *bedrockProject:: addObject      ( uint64_t type, const char *name, const char *path, objects_t *dependancies )
+projectObject *bedrockProject:: addObject      ( uint64_t type, const char *name, const char *path, objects_t *dependancies, uint64_t uuid )
 {
     projectObject *object;
     if (!(object = new projectObject ( type, name, path, dependancies )))

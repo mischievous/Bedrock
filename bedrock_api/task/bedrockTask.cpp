@@ -60,8 +60,6 @@ void        *bedrockTask::thread_wait   ( bedrockTask *task )
     //
     pthread_mutex_unlock (&task->running);
 
-    printf (" bedrockTask::worker_wait :: joining : %d [ %d ] : %d [ %d ] [ %d ] [ %d ] [ %d ]\n", task->child, pid, WEXITSTATUS(status), WIFEXITED(status), WIFSIGNALED(status), WIFSIGNALED(status), WIFSTOPPED(status));
-
     //
     if (pthread_join( task->threads[0], NULL )) perror ("bedrockTask::worker_wait : THREAD [ STDOUT ] ");
     if (pthread_join( task->threads[1], NULL )) perror ("bedrockTask::worker_wait : THREAD [ STDERR ] ");
@@ -90,7 +88,7 @@ void        *bedrockTask::thread_worker ( thread_args *args )
 
     //
     uint64_t idx = 0;
-    char     buffer[1024];
+    char     buffer[4048];
 
     //
     fd_set rfds;
@@ -165,7 +163,12 @@ uint64_t bedrockTask::read   ( uint32_t pipe, uint64_t idx, char *buffer, char *
         if (byte == '\n')
         {
             pthread_mutex_lock   (&console);
-            printf ("%s %s <--\n", omsg, buffer);
+            
+            if (strlen(buffer))
+                printf ("%s %s <--\n", omsg, buffer);
+            else
+                printf ("\n");
+
             pthread_mutex_unlock (&console);
             idx  = 0;
             buffer[0] = '\0';
@@ -227,6 +230,9 @@ bedrockTask *bedrockTask::factory      ( const char *cmd, const args_t args )
         return task;
     }
 
+//
+chdir ("/Volumes/Promise/projects/bedrock/reference/legion/vehGraph");
+
     close (task->fdo [PIPE_R]);
     close (task->fde [PIPE_R]);
 
@@ -235,8 +241,41 @@ bedrockTask *bedrockTask::factory      ( const char *cmd, const args_t args )
     dup2(task->fde[PIPE_W], 2); // duplicate a file descriptor 1 => stdout
 
     //
-    if (execlp ("/bin/ls", "/bin/ls", "-la", "/Users/alexandra", NULL) == -1)
-        perror ("bedrockTask::factory : execlp ");
+    uint64_t  argc = 0;
+    char     *argv [args.size() + 2];
+
+    //
+    argv [argc] = (char *) malloc (strlen (cmd) + 4);
+    snprintf (argv[argc++], strlen (cmd) + 4, "%s", cmd);
+    //
+    for (uint64_t idx = 0; idx < args.size(); idx += 1)
+    {
+        uint64_t length = args[idx].length() + 4;
+
+        argv[argc] = (char *) malloc (length);
+        snprintf (argv[argc++], length, "%s", args[idx].c_str());
+    }
+
+    //
+    argv [argc] = NULL;
+
+char cwd[1024];
+getcwd(cwd, sizeof (cwd));
+
+printf ("%s\n", cwd);
+for (uint64_t i = 0; i < argc; i+= 1)
+{
+    if (i) printf (" ");
+
+    printf ("%s", argv[i]);
+}
+printf ("\n");
+printf ("\n");
+
+
+    //
+    if (execve (argv[0], argv, NULL) == -1)
+        perror ("bedrockTask::factory : execve ");
 
     //
     exit(0);
