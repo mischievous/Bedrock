@@ -21,6 +21,7 @@ typedef void *(*start) (void *);
 
 //
 typedef std::vector <std::string> args_t;
+typedef std::function< void ( uint32_t, char * ) > task_callback;
 
 //
 typedef struct
@@ -35,24 +36,37 @@ class bedrockTask
 {
     private   :
         //
-        pid_t           child;
+        pid_t                      child;
 
         //
-        int             fdo     [2]; // stdout
-        int             fde     [2]; // stderr
+        int                        fdo        [2]; // stdout
+        int                        fde        [2]; // stderr
 
         //
-        thread_args     args    [2];
+        thread_args                args       [2];
 
         //
-        pthread_mutex_t running;
-        pthread_mutex_t console;
+        pthread_mutex_t            running;
+        pthread_mutex_t            console;
 
         //
-        pthread_t       threads [3];
+        pthread_t                  threads    [3];
+
+        uint32_t                   output     [2];
+        task_callback             *callback   [2];
+        std::vector <std::string>  std_buffer [2];
 
         //
-                             bedrockTask  ( const char *cmd, const args_t args );
+//        std::string                task_cmd;
+        args_t                     task_args;
+        args_t                     task_vars;
+
+        //
+        std::string                task_wd;
+
+
+        //
+                             bedrockTask   ( const char *cmd, const args_t args, const args_t vars = args_t() );
 
         //
         static   void       *thread_wait   ( bedrockTask *task );
@@ -60,17 +74,33 @@ class bedrockTask
 
         //
                  uint32_t    avail         ( uint32_t pipe   );
-                 uint64_t    read          ( uint32_t pipe, uint64_t idx, char *buffer, char *omsg );
+                 uint64_t    read          ( uint32_t pipe , uint64_t idx, uint64_t count, char *buffer, char *omsg, uint32_t type );
+
+                 void        forked        ( void );
+                 void        launch        ( const args_t task_args, const args_t task_vars );
+
+                 uint64_t    builder       ( char **argv, const args_t args ); 
 
     protected :
 
 
     public    :
-        static  bedrockTask *factory      ( const char *cmd, const args_t args );
-        virtual             ~bedrockTask  ( void );
+        //
+        static  bedrockTask *factory           ( const char *cmd, const args_t args, const args_t vars = args_t(), uint32_t start = 1 );
 
         //
-                void         wait         ( void ) { pthread_join (threads[2], NULL); }
+        virtual             ~bedrockTask       ( void );
+
+                //
+                void         env               ( const args_t vars ); 
+
+
+        //
+                void         so                ( task_callback *action = NULL, uint32_t enableOutput = 0 ) { output[0] = enableOutput; callback[0] = action; }
+                void         se                ( task_callback *action = NULL, uint32_t enableOutput = 0 ) { output[1] = enableOutput; callback[1] = action; }
+
+                void         cwd               ( const char *wd ) { task_wd = wd; }
+                void         wait              ( void ) { if (threads[2] == NULL) { launch ( task_args, task_vars ); } pthread_join (threads[2], NULL); }
 };
 
 #endif /* bedrockTask_hpp */

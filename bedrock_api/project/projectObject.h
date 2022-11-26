@@ -12,11 +12,12 @@
 #include <vector>
 #include <string>
 
+#include "uuid.h"
 
 //
 class projectObject;
-typedef std::vector <projectObject *> objects_t;
-typedef std::vector <std::string>     options_t;
+typedef std::vector <uint128_t  > objects_t;
+typedef std::vector <std::string> options_t;
 
 typedef enum
 {
@@ -29,56 +30,77 @@ typedef enum
 
     PO_FOLDER      ,
 
-    PO_TARGET      , // Application, Libraries, Console, Bundles
+    PO_TARGET      , // Application, Libraries, Console, Bundles, Archive
 
     PO_HEADER      , // *.h, *.hpp, ...
     PO_SOURCE      , // *.c, *.cpp, *.m, *.mm
+    PO_ACTION      ,
+    PO_IGNORE      , 
     PO_LAST
 
 } PO_TYPE;
+
+typedef struct
+{
+    __uuid__ uuid;
+
+    uint64_t type;
+    char     name[ 256];
+    char     path[1024];
+
+} objectData;
+
+// forward declararion
+class bedrockProject;
 
 //
 class projectObject
 {
     private   :
-        uint64_t  type;
-        char      name        [256];
-        char      path        [256];
+        objectData         object;
+
+        //
+        bedrockProject    *owner;
+
 //        char     *image;
-        void     *cell;
 
         //
-        objects_t children;
+        projectObject     *parent;
 
         //
-        objects_t dependancies;
-        options_t options;
+        options_t          options;
 
         //
-        static   bool      compare ( projectObject *lhs, projectObject *rhs );
+        objects_t          children;
+        objects_t          dependancies;
 
+        //
+                 bool      compare ( projectObject *lhs, projectObject *rhs );
         
     protected :
 
 
     public    :
-                       projectObject ( uint64_t type, const char *name, const char *path = NULL, objects_t *dependancies = NULL );
+                       projectObject ( uint64_t type, const char *path, const char *name, bedrockProject *owner = NULL );
         virtual       ~projectObject ( void );
 
-        //
-                 uint64_t  count     ( void                  ) { return children.size(); }
-                 void      child     ( projectObject *object ) { children.push_back(object); }
-                 void     *child     ( uint64_t idx          ) { if (idx >= children.size()) return NULL; return (void *) children[idx]; }
+                 //
+                 uint64_t       count      ( void                  ) { return children.size(); }
 
-        //
-                 void      sort      ( void                  );
+                 void           dependancy ( projectObject *object );
+                 void           child      ( projectObject *object );
+                 projectObject *child      ( uint64_t idx          );
 
-        //
-                 char     *title     ( void                  ) { return name; }
 
-        //
-                 void     *view      ( void                  ) { return cell; }
-                 void      view      ( void *view            ) { cell = view; }
+
+                 //
+                 void           sort       ( void                  );
+
+                 //
+                 __uuid__       uuid       ( void                  ) { return object.uuid; }
+                 uint64_t       type       ( void                  ) { return object.type; }
+                 char          *path       ( void                  );
+                 char          *title      ( void                  ) { return object.name; }
 };
 
 #endif /* projectObject_hpp */

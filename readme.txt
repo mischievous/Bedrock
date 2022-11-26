@@ -25,10 +25,15 @@
 (2022/11/12)                fortran   (fc)
 
 (____/__/__)            bedrock_make -- PHASE 2 ( compiler only)
-(____/__/__)                compile   (cc, cxx)
-(____/__/__)                link 
-(____/__/__)                assembler (as)
+(2022/11/13)                libtool
+(2022/11/13)                archiver  (ar)
+(2022/11/13)                compile   (cc, cxx)
+(2022/11/13)                link
+(2022/11/13)                assembler (as)
 (____/__/__)                fortran   (fc)
+
+(____/__/__)            bedrock_make -- Missing Links
+(____/__/__)                python 
 
 
 (____/__/__)            All path formats (actual:host)
@@ -68,6 +73,8 @@
 (____/__/__)                    make "clean" target --> "clean"
 (____/__/__)                    make "build" target --> "all" or ""
 (____/__/__)                    additional tools to capture and path to captured tool
+(____/__/__)                    project path
+(____/__/__)                    import location path
 
 
 (____/__/__)            import xcode

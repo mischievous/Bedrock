@@ -7,15 +7,19 @@
 //
 
 //
+#import <map>
 #import <dlfcn.h>
 
 //
 #import "pluginManager.h"
 
 //
-#define FACTORY         (@"_ZN%lu%@%lu%@FactoryEP8NSBundleP7bedrock")
-//#define PRINCIPAL_CLASS (@"NSPrincipalClass")
+//#define FACTORY         ("_ZN%lu%@%lu%@FactoryEP8NSBundleP7bedrockPv")
+#define FACTORY         ("_ZN%lu%s7factoryEP8NSBundleP7bedrockPv")
 #define PRINCIPAL_CLASS (@"bedrockClass")
+
+//
+typedef std::map <uint128_t, void *> plugins_m;
 
 //
 static pluginManager *singleton = NULL;
@@ -25,13 +29,15 @@ static pluginManager *singleton = NULL;
 //
 @interface pluginManager ()
 {
-    // Fucking APPLE!
-//    NSMutableArray *bundles;
-
+    plugins_m plugins;
 }
 
 //
 -(void) load :(NSBundle *) bundle :(bedrock  *) owner :(void *) handle :(NSString *) className;
+
+//
+-(void  )   addPlugin  :(uint128_t) key :(void *) symbol;
+-(void *)   getPlugin  :(uint128_t) key;
 
 
 @end
@@ -66,12 +72,44 @@ static pluginManager *singleton = NULL;
 //
 
 
+//
+//
++(void *) loadSymbol :(void *) library :(const char *) symbol :(const char *) className
+{
+    size_t length = strlen (className);
+
+    char symbolName[256];
+    snprintf (symbolName, sizeof (symbolName), symbol, length, className);
+
+
+    return dlsym (library, symbolName);
+}
+//
+
+
+//
+//
++(void  ) addPlugin:(uint128_t)key :(void *)symbol
+{
+    return [singleton addPlugin:key :symbol];
+}
+//
+
+
+//
+//
++(void *) getPlugin:(uint128_t)key
+{
+    return [singleton getPlugin:key];
+}
+//
+
 
 #pragma mark public
 
 //
 //
--(id  ) init
+-(id    ) init
 {
     //
     self = (singleton) ? singleton:self;
@@ -99,27 +137,23 @@ static pluginManager *singleton = NULL;
 
 //
 //
--(void) load :(NSBundle *) bundle :(bedrock  *) owner :(void *) handle :(NSString *) className
+-(void  ) load :(NSBundle *) bundle :(bedrock  *) owner :(void *) handle :(NSString *) className
 {
     //
-    NSString *factoryName;
-    factoryName = [NSString stringWithFormat:FACTORY, className.length, className, className.length + 7, className];
-
-    //
     pluginFactory_t factory;
-    if (!(factory = (pluginFactory_t) dlsym ( handle, [factoryName UTF8String] )))
+    if (!(factory = (pluginFactory_t) [pluginManager loadSymbol:handle :FACTORY :[className UTF8String]]))
         return;
 
     //
     bedrockPlugin *plugin;
-    plugin = (bedrockPlugin *) factory ( bundle, owner );
+    plugin = (bedrockPlugin *) factory ( bundle, owner, handle );
 }
 //
 
 
 //
 //
--(void) bootstrap :(bedrock  *) owner 
+-(void  ) bootstrap :(bedrock  *) owner
 {
     //
     if ([NSThread isMainThread])
@@ -179,4 +213,25 @@ sleep (1);
 //
 
 
+//
+//
+-(void  ) addPlugin:(uint128_t)key :(void *)symbol
+{
+    //
+    plugins[key] = symbol;
+}
+//
+
+
+//
+//
+-(void *) getPlugin:(uint128_t)key
+{
+    void *plugin = NULL;
+    if (plugins.find(key) != plugins.end())
+        plugin = plugins[key];
+
+    return plugin;
+}
+//
 @end

@@ -6,13 +6,17 @@
 //
 
 //
+#import <map>
+
+//
 #import <Cocoa/Cocoa.h>
 
 //
 #import "bedrockProject.h"
 
+
 //
-@interface bedrock : NSApplication
+@interface bedrock : NSApplication <NSWindowDelegate>
 {
 }
 
@@ -36,11 +40,7 @@
 -(NSMenu         *) accessMenu;
 
 // projects
--(bedrockProject *) addProject     :(const char *) projectName;
-
-//-(NSTreeController *) newProject     :(NSString *) projectName;
-//-(id                ) addTarget      :(NSTreeController *) project :(NSString *) target;
-//-(id                ) addObject      :(NSTreeController *) project :(NSString *) target :(NSString *) object;
+-(bedrockProject *) addProject     :(const char *) projectName :(const char *) projectRoot;
 
 
 @end

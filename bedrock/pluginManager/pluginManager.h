@@ -22,8 +22,13 @@
 +(id  )     factory;
 
 //
--(void)     bootstrap :(bedrock *) owner;
++(void *)   loadSymbol :(void *) library :(const char *) symbol :(const char *) className;
 
+// library plugins
++(void  )   addPlugin  :(uint128_t) key :(void *) symbol;
++(void *)   getPlugin  :(uint128_t) key;
 
+//
+-(void)     bootstrap  :(bedrock *) owner;
 
 @end

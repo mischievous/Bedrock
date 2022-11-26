@@ -20,6 +20,18 @@ int main(int argc, const char * argv[])
 
 
 //
+//
+void    *worker_thread ( callback_plugin *callback )
+{
+    (*callback) ();
+
+    //
+    pthread_exit (NULL);
+}
+//
+
+
+//
 @interface bedrock ()
 {
     //
@@ -96,8 +108,14 @@ int main(int argc, const char * argv[])
 -(void) actionMenu:(NSMenuItem *) sender
 {
     callback_plugin *callback = NULL;
-    if ((callback = (callback_plugin *) sender.tag))
-        (*callback) ();
+    if (!(callback = (callback_plugin *) sender.tag))
+        return;
+
+    //
+    pthread_t boot_thread;
+    pthread_create (&boot_thread, NULL, ((void *(*)(void *)) worker_thread), callback);
+
+//
 }
 //
 
@@ -136,6 +154,7 @@ int main(int argc, const char * argv[])
 
     //
     child.contentView     = ctrler.view;
+    child.delegate        = self;
 
     //
     [child makeKeyAndOrderFront:self];
@@ -249,23 +268,6 @@ int main(int argc, const char * argv[])
         [self createWindow:ctrler];
     }
 
-
-#if 0
-    Class cls;
-    if (!(cls = NSClassFromString(@"projectView")))
-        return NULL;
-
-    NSViewController *ctrler = NULL;
-    if ((ctrler = [[cls alloc] initWithNibName:[NSString stringWithUTF8String:nibName] bundle:[NSBundle mainBundle]]))
-    {
-        NSLog (@"%@", ctrler);
-        NSLog (@"%@", ctrler.view);
-
-        [self createWindow:ctrler];
-    }
-#endif
-
-
 //
 //    NSNib *nib;
 //    if (!(nib = [[NSNib alloc] initWithNibNamed:[NSString stringWithUTF8String:nibName] bundle:bundle]))
@@ -326,55 +328,31 @@ int main(int argc, const char * argv[])
 
 //
 //
--(bedrockProject *) addProject:(const char *)projectName
+-(bedrockProject *) addProject :(const char *)projectName :(const char *) projectRoot
 {
-    return new bedrockProject (projectName);
+    return new bedrockProject (projectName, projectRoot);
 }
 //
 
+#pragma mark NSWindowDelegate
 
-#if 0
-//
-//
--(NSTreeController *) newProject :(NSString *) projectName
+-(BOOL)windowShouldClose :(NSWindow *)sender
 {
-    NSTreeController *project = NULL;
-    if ((project = [[NSTreeController alloc] init]))
-    {
-        project.childrenKeyPath = @"children";
-    }
+    NSLog (@"%s : %@", __PRETTY_FUNCTION__, sender);
 
-    return project;
+    //
+    sender.contentView    = NULL;
+    sender.delegate       = NULL;
+
+    //
+    [sender orderOut:self];
+
+    //
+    [sender class];
+
+    return 0;
 }
-//
 
-
-//
-//
--(id  ) addTarget :(NSTreeController *) project :(NSString *) target
-{
-    [project addObject:@{@"title" : target, @"children" : [NSMutableArray arrayWithCapacity:0]}];
-    return [project.content lastObject];
-}
-//
-
-//
-//
--(id  ) addObject :(NSTreeController *) project :(NSString *) target :(NSString *) object
-{
-    for (NSDictionary *data in project.content)
-    {
-        if ([data[@"title"] compare:target] != NSOrderedSame)
-            continue;
-
-        [data[@"children"] addObject:@{@"title" : object, @"children" : [NSMutableArray arrayWithCapacity:0]}];
-        return [data[@"children"] lastObject];
-    }
-
-    return NULL;
-}
-//
-#endif
 
 @end
 

@@ -11,7 +11,14 @@
 #include <string>
 
 //
+#include "with.h"
+
+
+//
 #include "bedrock.h"
+
+//
+#include "common/uuid/uuid.h"
 
 
 #ifndef BEDROCK_API
@@ -30,21 +37,28 @@ class bedrockPlugin
     protected:
         NSBundle *bundle;
         bedrock  *owner;
+        void     *library;
+
+        // plugins
+                void            plugin       ( __uuid__ uuid, const char *name );
+                void           *plugin       ( __uuid__ uuid );
+
 
         // windows/views
-                id              addView    ( const char *nibName );
+                id              addView      ( const char *nibName );
 
         // menus
-                void            addMenu    ( callback_plugin *callback, const std::vector <std::string> path );
+                void            addMenu      ( callback_plugin *callback, const std::vector <std::string> path );
+                void            performMenu  ( const std::vector <std::string> path );
 
         // projects
-                bedrockProject *addProject ( const char *path );
+                bedrockProject *addProject   ( const char *path, const char *root = NULL );
 //                void addTarget ( 
 
     //
     public:
         //
-                               bedrockPlugin ( NSBundle *bundle, bedrock *owner );
+                               bedrockPlugin ( NSBundle *bundle, bedrock *owner, void *library );
         virtual               ~bedrockPlugin ( void );
 };
 
@@ -52,7 +66,7 @@ class bedrockPlugin
 //
 extern "C"
 {
-    typedef bedrockPlugin *( *pluginFactory_t ) ( NSBundle *bundle, bedrock *owner );
+    typedef bedrockPlugin *( *pluginFactory_t ) ( NSBundle *bundle, bedrock *owner, void *library );
 }
 
 

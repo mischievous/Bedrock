@@ -11,17 +11,34 @@
 		A80591892892C5F00023DDD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A80591882892C5F00023DDD5 /* Assets.xcassets */; };
 		A805918C2892C5F00023DDD5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A805918A2892C5F00023DDD5 /* MainMenu.xib */; };
 		A80591A32892CA1D0023DDD5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80591A22892CA1D0023DDD5 /* Cocoa.framework */; };
+		A80E190429184E250002ED80 /* bedrockProject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E64E6629184CBD00C2E6C2 /* bedrockProject.cpp */; };
+		A80E191529184E7B0002ED80 /* bedrockProject.h in Headers */ = {isa = PBXBuildFile; fileRef = A8E64E6529184CBD00C2E6C2 /* bedrockProject.h */; };
+		A80E191629184E7B0002ED80 /* projectObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A8E64E6829184CBD00C2E6C2 /* projectObject.h */; };
+		A80E191929184E800002ED80 /* bedrockTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E64E6A29184CBD00C2E6C2 /* bedrockTask.cpp */; };
+		A80E191A29184E800002ED80 /* bedrockTask.h in Headers */ = {isa = PBXBuildFile; fileRef = A8E64E6B29184CBD00C2E6C2 /* bedrockTask.h */; };
+		A80E191C29184E8D0002ED80 /* api.h in Headers */ = {isa = PBXBuildFile; fileRef = A8E64E6329184CBD00C2E6C2 /* api.h */; };
+		A80E191D29184E8D0002ED80 /* api.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8E64E6229184CBD00C2E6C2 /* api.mm */; };
+		A829459328BFE271009DE511 /* build.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A829459228BFE271009DE511 /* build.jpeg */; };
 		A82AFDB82893095D00FACC18 /* project.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82AFDB72893095D00FACC18 /* project.xib */; };
-		A84841ED289AA4E50096B858 /* bedrockTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A84841EB289AA4E50096B858 /* bedrockTask.cpp */; };
-		A84841EE289AA4E50096B858 /* bedrockTask.h in Headers */ = {isa = PBXBuildFile; fileRef = A84841EC289AA4E50096B858 /* bedrockTask.h */; };
 		A85A6E692899BE0400537908 /* cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85A6E682899BE0400537908 /* cell.xib */; };
 		A85A6E722899D12600537908 /* cellView.mm in Sources */ = {isa = PBXBuildFile; fileRef = A85A6E712899D12600537908 /* cellView.mm */; };
-		A85E530228980A1D0000D08C /* projectObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A85E52FC2897FD650000D08C /* projectObject.cpp */; };
-		A85E530528980A210000D08C /* bedrockProject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A85E52F72897FB040000D08C /* bedrockProject.cpp */; };
+		A86A8756292D0CB1004C930B /* utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A86A8754292D0CB1004C930B /* utilities.h */; };
+		A86A8757292D0CB1004C930B /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A86A8755292D0CB1004C930B /* utilities.cpp */; };
+		A86D6B70293112ED000E7FE1 /* jobQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A86D6B6E293112ED000E7FE1 /* jobQueue.cpp */; };
+		A86D6B71293112ED000E7FE1 /* jobQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = A86D6B6F293112ED000E7FE1 /* jobQueue.h */; };
+		A86D6B79293248AF000E7FE1 /* projectQueue.mm in Sources */ = {isa = PBXBuildFile; fileRef = A86D6B77293248AF000E7FE1 /* projectQueue.mm */; };
+		A86D6B8C293263E1000E7FE1 /* interface.mm in Sources */ = {isa = PBXBuildFile; fileRef = A86D6B87293262E5000E7FE1 /* interface.mm */; };
+		A8A4E9F9291E8FEE00FD8EB8 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = A8A4E9F8291E8FEE00FD8EB8 /* readme.txt */; };
+		A8A4EA07291E9CA600FD8EB8 /* compiler in Resources */ = {isa = PBXBuildFile; fileRef = A8A4EA06291E9CA600FD8EB8 /* compiler */; };
+		A8A4EA0E291E9D0100FD8EB8 /* linker in Resources */ = {isa = PBXBuildFile; fileRef = A8A4EA0C291E9D0100FD8EB8 /* linker */; };
+		A8A4EA18291F147700FD8EB8 /* bedrock_import in Resources */ = {isa = PBXBuildFile; fileRef = A8A4EA16291F147700FD8EB8 /* bedrock_import */; };
+		A8A4EA19291F147700FD8EB8 /* archiver in Resources */ = {isa = PBXBuildFile; fileRef = A8A4EA17291F147700FD8EB8 /* archiver */; };
+		A8A4EA1D291F148200FD8EB8 /* bedrock_import in CopyFiles */ = {isa = PBXBuildFile; fileRef = A8A4EA16291F147700FD8EB8 /* bedrock_import */; };
+		A8A4EA2129204A4B00FD8EB8 /* assembler in Resources */ = {isa = PBXBuildFile; fileRef = A8A4EA2029204A4B00FD8EB8 /* assembler */; };
+		A8A4EA26292055B800FD8EB8 /* fortran in Resources */ = {isa = PBXBuildFile; fileRef = A8A4EA25292055B800FD8EB8 /* fortran */; };
 		A8CC06402895BE8A00C0D2B8 /* splashDragon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8CC063F2895BE8A00C0D2B8 /* splashDragon.png */; };
 		A8CC06442895C1A300C0D2B8 /* splashGears.png in Resources */ = {isa = PBXBuildFile; fileRef = A8CC06432895C1A300C0D2B8 /* splashGears.png */; };
 		A8CC06512895D64B00C0D2B8 /* workspace.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8CC06502895D64B00C0D2B8 /* workspace.mm */; };
-		A8CC06622895E10800C0D2B8 /* api.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8CC06612895E10800C0D2B8 /* api.mm */; };
 		A8CC066C2895E1B900C0D2B8 /* libplugin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CC065D2895E10800C0D2B8 /* libplugin.dylib */; };
 		A8CC066D2895E1B900C0D2B8 /* libplugin.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A8CC065D2895E10800C0D2B8 /* libplugin.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A8CC06752895E21500C0D2B8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80591A22892CA1D0023DDD5 /* Cocoa.framework */; };
@@ -29,6 +46,8 @@
 		A8CC06822895E28200C0D2B8 /* libplugin.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A8CC065D2895E10800C0D2B8 /* libplugin.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A8CC068C2896C72600C0D2B8 /* projectView.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8CC068B2896C72600C0D2B8 /* projectView.mm */; };
 		A8CC06902896C7FB00C0D2B8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80591A22892CA1D0023DDD5 /* Cocoa.framework */; };
+		A8E2EAA3292E60050043C470 /* projectObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E64E6729184CBD00C2E6C2 /* projectObject.cpp */; };
+		A8E2EAC3292EC1AA0043C470 /* uuid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E2EA8E292E55110043C470 /* uuid.cpp */; };
 		A8FDDFC32892CF8D00AB7629 /* pluginManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8FDDFC22892CF8D00AB7629 /* pluginManager.mm */; };
 		A8FDDFE02892DAA300AB7629 /* workspaces.bedrock in CopyFiles */ = {isa = PBXBuildFile; fileRef = A8FDDFA72892CCF600AB7629 /* workspaces.bedrock */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -42,13 +61,6 @@
 			remoteInfo = plugin;
 		};
 		A8CC06782895E22200C0D2B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A805917A2892C5EF0023DDD5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A8CC065C2895E10800C0D2B8;
-			remoteInfo = plugin;
-		};
-		A8CC06832895E28200C0D2B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A805917A2892C5EF0023DDD5 /* Project object */;
 			proxyType = 1;
@@ -87,6 +99,16 @@
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A8E64E3E291805EF00C2E6C2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = bin;
+			dstSubfolderSpec = 16;
+			files = (
+				A8A4EA1D291F148200FD8EB8 /* bedrock_import in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A8FDDFDF2892DA9B00AB7629 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,24 +130,62 @@
 		A805918D2892C5F00023DDD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A80591902892C5F00023DDD5 /* bedrock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bedrock.entitlements; sourceTree = "<group>"; };
 		A80591A22892CA1D0023DDD5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A829459228BFE271009DE511 /* build.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = build.jpeg; sourceTree = "<group>"; };
 		A82AFDB72893095D00FACC18 /* project.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = project.xib; sourceTree = "<group>"; };
-		A84841EB289AA4E50096B858 /* bedrockTask.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bedrockTask.cpp; sourceTree = "<group>"; };
-		A84841EC289AA4E50096B858 /* bedrockTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bedrockTask.h; sourceTree = "<group>"; };
+		A84DF75E292FC628002B2B7B /* libcurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurses.tbd; path = usr/lib/libcurses.tbd; sourceTree = SDKROOT; };
+		A84DF7CF292FDD44002B2B7B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A85A6E682899BE0400537908 /* cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cell.xib; sourceTree = "<group>"; };
 		A85A6E702899D12600537908 /* cellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cellView.h; sourceTree = "<group>"; };
 		A85A6E712899D12600537908 /* cellView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = cellView.mm; sourceTree = "<group>"; };
-		A85E52F72897FB040000D08C /* bedrockProject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bedrockProject.cpp; sourceTree = "<group>"; };
-		A85E52F82897FB040000D08C /* bedrockProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bedrockProject.h; sourceTree = "<group>"; };
-		A85E52FC2897FD650000D08C /* projectObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = projectObject.cpp; sourceTree = "<group>"; };
-		A85E52FD2897FD650000D08C /* projectObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = projectObject.h; sourceTree = "<group>"; };
+		A86A8754292D0CB1004C930B /* utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utilities.h; sourceTree = "<group>"; };
+		A86A8755292D0CB1004C930B /* utilities.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utilities.cpp; sourceTree = "<group>"; };
+		A86D6B6E293112ED000E7FE1 /* jobQueue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = jobQueue.cpp; sourceTree = "<group>"; };
+		A86D6B6F293112ED000E7FE1 /* jobQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jobQueue.h; sourceTree = "<group>"; };
+		A86D6B77293248AF000E7FE1 /* projectQueue.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = projectQueue.mm; sourceTree = "<group>"; };
+		A86D6B78293248AF000E7FE1 /* projectQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = projectQueue.h; sourceTree = "<group>"; };
+		A86D6B7C29324B52000E7FE1 /* quiQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = quiQueue.h; sourceTree = "<group>"; };
+		A86D6B86293262E5000E7FE1 /* interface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = interface.h; sourceTree = "<group>"; };
+		A86D6B87293262E5000E7FE1 /* interface.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = interface.mm; sourceTree = "<group>"; };
+		A8710202292ECDB1006DE703 /* libboost_system.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libboost_system.a; sourceTree = "<group>"; };
+		A8710203292ECDB1006DE703 /* libboost_filesystem.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libboost_filesystem.a; sourceTree = "<group>"; };
+		A8710204292ECDB1006DE703 /* libboost_program_options.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libboost_program_options.a; sourceTree = "<group>"; };
+		A8A4E9E5291D639600FD8EB8 /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
+		A8A4E9F8291E8FEE00FD8EB8 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		A8A4EA06291E9CA600FD8EB8 /* compiler */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = compiler; sourceTree = "<group>"; };
+		A8A4EA0C291E9D0100FD8EB8 /* linker */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = linker; sourceTree = "<group>"; };
+		A8A4EA14291EE1EC00FD8EB8 /* with.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = with.h; sourceTree = "<group>"; };
+		A8A4EA16291F147700FD8EB8 /* bedrock_import */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = bedrock_import; sourceTree = "<group>"; };
+		A8A4EA17291F147700FD8EB8 /* archiver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = archiver; sourceTree = "<group>"; };
+		A8A4EA2029204A4B00FD8EB8 /* assembler */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = assembler; sourceTree = "<group>"; };
+		A8A4EA25292055B800FD8EB8 /* fortran */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fortran; sourceTree = "<group>"; };
+		A8C28F0D292AD7E70051B6F1 /* libclang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libclang.dylib; path = "reference/llvm-project/cellar/11.1.0/lib/libclang.dylib"; sourceTree = "<group>"; };
 		A8CC063F2895BE8A00C0D2B8 /* splashDragon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashDragon.png; sourceTree = "<group>"; };
 		A8CC06432895C1A300C0D2B8 /* splashGears.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashGears.png; sourceTree = "<group>"; };
 		A8CC06502895D64B00C0D2B8 /* workspace.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = workspace.mm; sourceTree = "<group>"; };
-		A8CC06562895E01000C0D2B8 /* api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = api.h; sourceTree = "<group>"; };
 		A8CC065D2895E10800C0D2B8 /* libplugin.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libplugin.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8CC06612895E10800C0D2B8 /* api.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = api.mm; sourceTree = "<group>"; };
 		A8CC068A2896C72600C0D2B8 /* projectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = projectView.h; sourceTree = "<group>"; };
 		A8CC068B2896C72600C0D2B8 /* projectView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = projectView.mm; sourceTree = "<group>"; };
+		A8E2EA8E292E55110043C470 /* uuid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uuid.cpp; sourceTree = "<group>"; };
+		A8E2EA8F292E55110043C470 /* uuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uuid.h; sourceTree = "<group>"; };
+		A8E2EA94292E56D20043C470 /* bedrockTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bedrockTypes.h; sourceTree = "<group>"; };
+		A8E2EAAE292EC0F20043C470 /* cppparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cppparser.h; sourceTree = "<group>"; };
+		A8E2EAB1292EC0FC0043C470 /* libcppparser.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcppparser.a; sourceTree = "<group>"; };
+		A8E2EAB4292EC12E0043C470 /* cppobjfactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cppobjfactory.h; sourceTree = "<group>"; };
+		A8E2EAB7292EC1510043C470 /* cppconst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cppconst.h; sourceTree = "<group>"; };
+		A8E2EAB8292EC1510043C470 /* cppast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cppast.h; sourceTree = "<group>"; };
+		A8E2EABC292EC1850043C470 /* cppeasyptr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cppeasyptr.h; sourceTree = "<group>"; };
+		A8E2EABD292EC1850043C470 /* typemodifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = typemodifier.h; sourceTree = "<group>"; };
+		A8E2EABE292EC1850043C470 /* string-utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "string-utils.h"; sourceTree = "<group>"; };
+		A8E64E5629184CBD00C2E6C2 /* clang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = clang.h; sourceTree = "<group>"; };
+		A8E64E6129184CBD00C2E6C2 /* clang.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = clang.cpp; sourceTree = "<group>"; };
+		A8E64E6229184CBD00C2E6C2 /* api.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = api.mm; sourceTree = "<group>"; };
+		A8E64E6329184CBD00C2E6C2 /* api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = api.h; sourceTree = "<group>"; };
+		A8E64E6529184CBD00C2E6C2 /* bedrockProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bedrockProject.h; sourceTree = "<group>"; };
+		A8E64E6629184CBD00C2E6C2 /* bedrockProject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bedrockProject.cpp; sourceTree = "<group>"; };
+		A8E64E6729184CBD00C2E6C2 /* projectObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = projectObject.cpp; sourceTree = "<group>"; };
+		A8E64E6829184CBD00C2E6C2 /* projectObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = projectObject.h; sourceTree = "<group>"; };
+		A8E64E6A29184CBD00C2E6C2 /* bedrockTask.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bedrockTask.cpp; sourceTree = "<group>"; };
+		A8E64E6B29184CBD00C2E6C2 /* bedrockTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bedrockTask.h; sourceTree = "<group>"; };
 		A8FDDFA72892CCF600AB7629 /* workspaces.bedrock */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = workspaces.bedrock; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8FDDFA92892CCF600AB7629 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8FDDFB52892CD6D00AB7629 /* workspace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = workspace.h; sourceTree = "<group>"; };
@@ -167,7 +227,8 @@
 		A80591792892C5EF0023DDD5 = {
 			isa = PBXGroup;
 			children = (
-				A8CC065E2895E10800C0D2B8 /* bedrock_api */,
+				A8A4E9F8291E8FEE00FD8EB8 /* readme.txt */,
+				A8E64E5429184CBD00C2E6C2 /* bedrock_api */,
 				A80591842892C5EF0023DDD5 /* bedrock */,
 				A8FDDFA82892CCF600AB7629 /* workspaces */,
 				A80591832892C5EF0023DDD5 /* Products */,
@@ -203,19 +264,21 @@
 		A80591A12892CA1D0023DDD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A84DF7CF292FDD44002B2B7B /* libz.tbd */,
+				A84DF75E292FC628002B2B7B /* libcurses.tbd */,
+				A8C28F0D292AD7E70051B6F1 /* libclang.dylib */,
 				A8FDDFD32892D51300AB7629 /* Cocoa.framework */,
 				A80591A22892CA1D0023DDD5 /* Cocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A84841EA289AA4CF0096B858 /* task */ = {
+		A829459128BFE240009DE511 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				A84841EC289AA4E50096B858 /* bedrockTask.h */,
-				A84841EB289AA4E50096B858 /* bedrockTask.cpp */,
+				A829459228BFE271009DE511 /* build.jpeg */,
 			);
-			path = task;
+			path = images;
 			sourceTree = "<group>";
 		};
 		A85A6E6C2899D0E300537908 /* project */ = {
@@ -238,15 +301,32 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
-		A85E52F62897FAE50000D08C /* project */ = {
+		A86A8753292D0C96004C930B /* utilities */ = {
 			isa = PBXGroup;
 			children = (
-				A85E52FD2897FD650000D08C /* projectObject.h */,
-				A85E52FC2897FD650000D08C /* projectObject.cpp */,
-				A85E52F82897FB040000D08C /* bedrockProject.h */,
-				A85E52F72897FB040000D08C /* bedrockProject.cpp */,
+				A86A8754292D0CB1004C930B /* utilities.h */,
+				A86A8755292D0CB1004C930B /* utilities.cpp */,
 			);
-			path = project;
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		A86D6B6D293112CE000E7FE1 /* jobQueue */ = {
+			isa = PBXGroup;
+			children = (
+				A86D6B7C29324B52000E7FE1 /* quiQueue.h */,
+				A86D6B6F293112ED000E7FE1 /* jobQueue.h */,
+				A86D6B6E293112ED000E7FE1 /* jobQueue.cpp */,
+			);
+			path = jobQueue;
+			sourceTree = "<group>";
+		};
+		A86D6B76293247BF000E7FE1 /* projectQueue */ = {
+			isa = PBXGroup;
+			children = (
+				A86D6B78293248AF000E7FE1 /* projectQueue.h */,
+				A86D6B77293248AF000E7FE1 /* projectQueue.mm */,
+			);
+			path = projectQueue;
 			sourceTree = "<group>";
 		};
 		A8CC063E2895BE6100C0D2B8 /* images */ = {
@@ -258,22 +338,128 @@
 			path = images;
 			sourceTree = "<group>";
 		};
-		A8CC065E2895E10800C0D2B8 /* bedrock_api */ = {
+		A8E2EA8A292E53D40043C470 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				A85E52F62897FAE50000D08C /* project */,
-				A84841EA289AA4CF0096B858 /* task */,
-				A8CC06562895E01000C0D2B8 /* api.h */,
-				A8CC06612895E10800C0D2B8 /* api.mm */,
+				A8E2EA8B292E54E40043C470 /* uuid */,
+				A8E2EA94292E56D20043C470 /* bedrockTypes.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		A8E2EA8B292E54E40043C470 /* uuid */ = {
+			isa = PBXGroup;
+			children = (
+				A8E2EA8E292E55110043C470 /* uuid.cpp */,
+				A8E2EA8F292E55110043C470 /* uuid.h */,
+			);
+			path = uuid;
+			sourceTree = "<group>";
+		};
+		A8E2EAAB292EC05D0043C470 /* cppparser */ = {
+			isa = PBXGroup;
+			children = (
+				A8E2EAAC292EC0AF0043C470 /* include */,
+				A8E2EAAD292EC0B40043C470 /* libary */,
+			);
+			path = cppparser;
+			sourceTree = "<group>";
+		};
+		A8E2EAAC292EC0AF0043C470 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A8E2EABC292EC1850043C470 /* cppeasyptr.h */,
+				A8E2EABE292EC1850043C470 /* string-utils.h */,
+				A8E2EABD292EC1850043C470 /* typemodifier.h */,
+				A8E2EAB8292EC1510043C470 /* cppast.h */,
+				A8E2EAB7292EC1510043C470 /* cppconst.h */,
+				A8E2EAB4292EC12E0043C470 /* cppobjfactory.h */,
+				A8E2EAAE292EC0F20043C470 /* cppparser.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A8E2EAAD292EC0B40043C470 /* libary */ = {
+			isa = PBXGroup;
+			children = (
+				A8710203292ECDB1006DE703 /* libboost_filesystem.a */,
+				A8710204292ECDB1006DE703 /* libboost_program_options.a */,
+				A8710202292ECDB1006DE703 /* libboost_system.a */,
+				A8E2EAB1292EC0FC0043C470 /* libcppparser.a */,
+			);
+			path = libary;
+			sourceTree = "<group>";
+		};
+		A8E64E3F2918060300C2E6C2 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				A8A4EA17291F147700FD8EB8 /* archiver */,
+				A8A4EA2029204A4B00FD8EB8 /* assembler */,
+				A8A4EA16291F147700FD8EB8 /* bedrock_import */,
+				A8A4EA06291E9CA600FD8EB8 /* compiler */,
+				A8A4EA25292055B800FD8EB8 /* fortran */,
+				A8A4EA0C291E9D0100FD8EB8 /* linker */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		A8E64E5429184CBD00C2E6C2 /* bedrock_api */ = {
+			isa = PBXGroup;
+			children = (
+				A8E2EAAB292EC05D0043C470 /* cppparser */,
+				A8E2EA8A292E53D40043C470 /* common */,
+				A86A8753292D0C96004C930B /* utilities */,
+				A8E64E5529184CBD00C2E6C2 /* clang */,
+				A86D6B6D293112CE000E7FE1 /* jobQueue */,
+				A8E64E6429184CBD00C2E6C2 /* project */,
+				A8E64E6929184CBD00C2E6C2 /* task */,
+				A8E64E6329184CBD00C2E6C2 /* api.h */,
+				A8E64E6229184CBD00C2E6C2 /* api.mm */,
+				A86D6B86293262E5000E7FE1 /* interface.h */,
+				A86D6B87293262E5000E7FE1 /* interface.mm */,
+				A8A4EA14291EE1EC00FD8EB8 /* with.h */,
 			);
 			path = bedrock_api;
+			sourceTree = "<group>";
+		};
+		A8E64E5529184CBD00C2E6C2 /* clang */ = {
+			isa = PBXGroup;
+			children = (
+				A8E64E5629184CBD00C2E6C2 /* clang.h */,
+				A8E64E6129184CBD00C2E6C2 /* clang.cpp */,
+			);
+			path = clang;
+			sourceTree = "<group>";
+		};
+		A8E64E6429184CBD00C2E6C2 /* project */ = {
+			isa = PBXGroup;
+			children = (
+				A8A4E9E5291D639600FD8EB8 /* json.hpp */,
+				A8E64E6829184CBD00C2E6C2 /* projectObject.h */,
+				A8E64E6729184CBD00C2E6C2 /* projectObject.cpp */,
+				A8E64E6529184CBD00C2E6C2 /* bedrockProject.h */,
+				A8E64E6629184CBD00C2E6C2 /* bedrockProject.cpp */,
+			);
+			path = project;
+			sourceTree = "<group>";
+		};
+		A8E64E6929184CBD00C2E6C2 /* task */ = {
+			isa = PBXGroup;
+			children = (
+				A8E64E6B29184CBD00C2E6C2 /* bedrockTask.h */,
+				A8E64E6A29184CBD00C2E6C2 /* bedrockTask.cpp */,
+			);
+			path = task;
 			sourceTree = "<group>";
 		};
 		A8FDDFA82892CCF600AB7629 /* workspaces */ = {
 			isa = PBXGroup;
 			children = (
+				A8E64E3F2918060300C2E6C2 /* bin */,
 				A85A6E6E2899D10700537908 /* cell */,
+				A829459128BFE240009DE511 /* images */,
 				A85A6E6C2899D0E300537908 /* project */,
+				A86D6B76293247BF000E7FE1 /* projectQueue */,
 				A8FDDFA92892CCF600AB7629 /* Info.plist */,
 				A8FDDFB52892CD6D00AB7629 /* workspace.h */,
 				A8CC06502895D64B00C0D2B8 /* workspace.mm */,
@@ -297,7 +483,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A84841EE289AA4E50096B858 /* bedrockTask.h in Headers */,
+				A80E191C29184E8D0002ED80 /* api.h in Headers */,
+				A80E191629184E7B0002ED80 /* projectObject.h in Headers */,
+				A86D6B71293112ED000E7FE1 /* jobQueue.h in Headers */,
+				A80E191529184E7B0002ED80 /* bedrockProject.h in Headers */,
+				A80E191A29184E800002ED80 /* bedrockTask.h in Headers */,
+				A86A8756292D0CB1004C930B /* utilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,13 +504,13 @@
 				A80591802892C5EF0023DDD5 /* Resources */,
 				A8FDDFDF2892DA9B00AB7629 /* CopyFiles */,
 				A8CC06852895E28300C0D2B8 /* Embed Libraries */,
+				A8E64E46291806F100C2E6C2 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				A8CC06792895E22200C0D2B8 /* PBXTargetDependency */,
 				A8FDDFDE2892DA9100AB7629 /* PBXTargetDependency */,
-				A8CC06842895E28200C0D2B8 /* PBXTargetDependency */,
 			);
 			name = bedrock;
 			productName = bedrock;
@@ -351,6 +542,7 @@
 				A8FDDFA42892CCF600AB7629 /* Frameworks */,
 				A8FDDFA52892CCF600AB7629 /* Resources */,
 				A8CC06702895E1B900C0D2B8 /* Embed Libraries */,
+				A8E64E3E291805EF00C2E6C2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -418,11 +610,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				A82AFDB82893095D00FACC18 /* project.xib in Resources */,
+				A829459328BFE271009DE511 /* build.jpeg in Resources */,
+				A8A4EA07291E9CA600FD8EB8 /* compiler in Resources */,
+				A8A4EA26292055B800FD8EB8 /* fortran in Resources */,
+				A8A4EA18291F147700FD8EB8 /* bedrock_import in Resources */,
+				A8A4EA2129204A4B00FD8EB8 /* assembler in Resources */,
+				A8A4EA19291F147700FD8EB8 /* archiver in Resources */,
+				A8A4E9F9291E8FEE00FD8EB8 /* readme.txt in Resources */,
 				A85A6E692899BE0400537908 /* cell.xib in Resources */,
+				A8A4EA0E291E9D0100FD8EB8 /* linker in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A8E64E46291806F100C2E6C2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p $CODESIGNING_FOLDER_PATH/Contents/cellar/bin\ncp -r ${BUILT_PRODUCTS_DIR}/bin/* ${CODESIGNING_FOLDER_PATH}/Contents/cellar/bin\nchmod -R og-wrx ${CODESIGNING_FOLDER_PATH}/Contents/cellar/bin\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A805917E2892C5EF0023DDD5 /* Sources */ = {
@@ -438,10 +658,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A85E530528980A210000D08C /* bedrockProject.cpp in Sources */,
-				A84841ED289AA4E50096B858 /* bedrockTask.cpp in Sources */,
-				A85E530228980A1D0000D08C /* projectObject.cpp in Sources */,
-				A8CC06622895E10800C0D2B8 /* api.mm in Sources */,
+				A8E2EAC3292EC1AA0043C470 /* uuid.cpp in Sources */,
+				A86A8757292D0CB1004C930B /* utilities.cpp in Sources */,
+				A80E191D29184E8D0002ED80 /* api.mm in Sources */,
+				A8E2EAA3292E60050043C470 /* projectObject.cpp in Sources */,
+				A80E190429184E250002ED80 /* bedrockProject.cpp in Sources */,
+				A86D6B8C293263E1000E7FE1 /* interface.mm in Sources */,
+				A86D6B70293112ED000E7FE1 /* jobQueue.cpp in Sources */,
+				A80E191929184E800002ED80 /* bedrockTask.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A85A6E722899D12600537908 /* cellView.mm in Sources */,
+				A86D6B79293248AF000E7FE1 /* projectQueue.mm in Sources */,
 				A8CC068C2896C72600C0D2B8 /* projectView.mm in Sources */,
 				A8CC06512895D64B00C0D2B8 /* workspace.mm in Sources */,
 			);
@@ -467,11 +692,6 @@
 			isa = PBXTargetDependency;
 			target = A8CC065C2895E10800C0D2B8 /* plugin */;
 			targetProxy = A8CC06782895E22200C0D2B8 /* PBXContainerItemProxy */;
-		};
-		A8CC06842895E28200C0D2B8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A8CC065C2895E10800C0D2B8 /* plugin */;
-			targetProxy = A8CC06832895E28200C0D2B8 /* PBXContainerItemProxy */;
 		};
 		A8FDDFDE2892DA9100AB7629 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -509,7 +729,7 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -569,7 +789,7 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -611,10 +831,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = bedrock/bedrock.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X5QUDAATB4;
 				ENABLE_HARDENED_RUNTIME = NO;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/bedrock_api/clang\"";
 				INFOPLIST_FILE = bedrock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -622,6 +844,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.androidmedia.bedrock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/bedrock_api/clang/include\"/**";
 			};
 			name = Debug;
 		};
@@ -631,10 +854,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = bedrock/bedrock.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X5QUDAATB4;
 				ENABLE_HARDENED_RUNTIME = NO;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/bedrock_api/clang\"";
 				INFOPLIST_FILE = bedrock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -642,6 +867,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.androidmedia.bedrock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/bedrock_api/clang/include\"/**";
 			};
 			name = Release;
 		};
@@ -676,12 +902,13 @@
 		A8FDDFAA2892CCF600AB7629 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X5QUDAATB4;
 				INFOPLIST_FILE = workspaces/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = com.androidmedia.workspaces;
+				PRODUCT_BUNDLE_IDENTIFIER = com.androidmedia.bedrock.workspaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bedrock;
@@ -691,12 +918,13 @@
 		A8FDDFAB2892CCF600AB7629 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X5QUDAATB4;
 				INFOPLIST_FILE = workspaces/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = com.androidmedia.workspaces;
+				PRODUCT_BUNDLE_IDENTIFIER = com.androidmedia.bedrock.workspaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bedrock;
