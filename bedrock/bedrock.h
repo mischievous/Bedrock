@@ -34,6 +34,7 @@
 -(void            ) stepProgress   :(NSString *) message;
 
 // window/view
+-(id              ) addWindow      :(const char *) nibName    :(const char *) bundle :(NSWindowStyleMask) styleMask;
 -(id              ) addView        :(const char *) nibName    :(NSBundle *) bundle;
 
 // menu

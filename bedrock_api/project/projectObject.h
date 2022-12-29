@@ -12,7 +12,7 @@
 #include <vector>
 #include <string>
 
-#include "uuid.h"
+#include "bedrock_uuid.h"
 
 //
 class projectObject;
@@ -42,11 +42,11 @@ typedef enum
 
 typedef struct
 {
-    __uuid__ uuid;
+    bedrock_uuid uuid;
 
-    uint64_t type;
-    char     name[ 256];
-    char     path[1024];
+    uint64_t     type;
+    char         name[ 256];
+    char         path[1024];
 
 } objectData;
 
@@ -97,7 +97,7 @@ class projectObject
                  void           sort       ( void                  );
 
                  //
-                 __uuid__       uuid       ( void                  ) { return object.uuid; }
+                 bedrock_uuid   uuid       ( void                  ) { return object.uuid; }
                  uint64_t       type       ( void                  ) { return object.type; }
                  char          *path       ( void                  );
                  char          *title      ( void                  ) { return object.name; }

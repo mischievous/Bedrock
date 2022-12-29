@@ -5,6 +5,11 @@
 //  Created by Alexandra Beebe on 7/28/22.
 //
 
+//
+#import "log.h"
+
+//
+#import "warlock/warlock.h"
 
 //
 #import "bedrock.h"
@@ -15,6 +20,10 @@
 //
 int main(int argc, const char * argv[])
 {
+    //
+    LOGGER_DEFAULT ("prayingMantis", LEVEL_ALL );
+    log_void();
+
     return NSApplicationMain(argc, argv);
 }
 
@@ -42,8 +51,10 @@ void    *worker_thread ( callback_plugin *callback )
 
 //
 #pragma mark private bedrock api
--(uint64_t) mainThread   :(SEL) selector :(id) object;
--(id      ) createWindow :(NSViewController *) ctrler;
+-(uint64_t  ) mainThread   :(SEL) selector :(id) object;
+-(NSBundle *) bundle       :(NSString *) bundleName;
+
+-(id      ) createWindow   :(NSWindowStyleMask  ) styleMask;
 
 @end
 
@@ -55,7 +66,7 @@ void    *worker_thread ( callback_plugin *callback )
 {
     if (self == [bedrock class])
     {
-        NSLog (@"%s : %@", __FUNCTION__, self);
+        log_void();
     }
 }
 //
@@ -72,7 +83,7 @@ void    *worker_thread ( callback_plugin *callback )
     if ((self = [super init]))
     {
         //
-        NSLog (@"%s : %@", __FUNCTION__, self);
+        log_self();
     }
 
     //
@@ -125,7 +136,7 @@ void    *worker_thread ( callback_plugin *callback )
 
 //
 //
--(uint64_t) mainThread   :(SEL) selector :(id) object;
+-(uint64_t  ) mainThread   :(SEL) selector :(id) object;
 {
     if (![NSThread isMainThread])
     {
@@ -140,24 +151,38 @@ void    *worker_thread ( callback_plugin *callback )
 
 //
 //
--(id  )     createWindow :(NSViewController *)ctrler
+-(NSBundle *) bundle       :(NSString *)bundleName
 {
+    for (NSBundle *bundle in [NSBundle allBundles])
+    {
+        if ([bundle.bundleIdentifier hasSuffix:bundleName])
+            return bundle;
+    }
+
+    return NULL;
+
+}
 //
-    NSLog (@"%s", __FUNCTION__);
 
-//    const NSWindowStyleMask styleMask = NSWindowStyleMaskBorderless | NSWindowStyleMaskFullSizeContentView;
-    const NSWindowStyleMask styleMask = NSWindowStyleMaskTitled | NSWindowStyleMaskClosable | NSWindowStyleMaskMiniaturizable | NSWindowStyleMaskResizable;
 
-    NSWindow *child;
-    if (!(child = [[NSWindow alloc] initWithContentRect:ctrler.view.frame styleMask:styleMask backing:NSBackingStoreBuffered defer:NO]))
+//
+//
+-(id  )     createWindow   :(NSWindowStyleMask) styleMask
+{
+    log_void();
+
+    //
+    if (styleMask == 0xffffffff)
+        styleMask = NSWindowStyleMaskTitled | NSWindowStyleMaskClosable | NSWindowStyleMaskMiniaturizable | NSWindowStyleMaskResizable;
+
+//styleMask |= NSWindowStyleMaskTitled | NSWindowStyleMaskResizable;
+
+    warlock *child;
+    if (!(child = [[warlock alloc] initWithContentRect:NSZeroRect styleMask:styleMask backing:NSBackingStoreBuffered defer:NO]))
         return NULL;
 
     //
-    child.contentView     = ctrler.view;
     child.delegate        = self;
-
-    //
-    [child makeKeyAndOrderFront:self];
 
     //
     return child;
@@ -238,67 +263,117 @@ void    *worker_thread ( callback_plugin *callback )
 //
 
 
-
 //
 //
--(id  ) addView        : (const char *) nibName :(NSBundle *) bundle
+-(id  ) addWindow      :(const char *) nibName :(const char *) bundleName :(NSWindowStyleMask) styleMask
 {
     if ( ![NSThread isMainThread] )
     {
         __block id rtn;
         dispatch_sync (dispatch_get_main_queue(), ^{
-            rtn = [ self addView :nibName :bundle];
+            rtn = [ self addWindow :nibName :bundleName :styleMask];
         });
 
         return rtn;
     }
 
     //
+    NSBundle *bundle;
+    if (!(bundle = [self bundle:[NSString stringWithUTF8String:bundleName]]))
+        return NULL; 
+
+    //
     NSViewController *ctrler;
-    if ((ctrler = [[NSViewController alloc] initWithNibName:[NSString stringWithUTF8String:nibName] bundle:bundle]))
-    {
-        NSLog (@"%@", ctrler);
-        NSLog (@"%@", ctrler.view);
+    if (!(ctrler = [[NSViewController alloc] initWithNibName:[NSString stringWithUTF8String:nibName] bundle:bundle]))
+        return NULL;
 
-//        //
-//        if ([ctrler.view respondsToSelector:@selector (bootstrap)])
-//            [ctrler.view performSelector:@selector(bootstrap) withObject:NULL];
+    //
+    NSWindow *child;
+    if (!(child = [self createWindow :styleMask]))
+        return NULL;
 
-        //
-        [self createWindow:ctrler];
-    }
+    //
+    [child setFrame:[child frameRectForContentRect:ctrler.view.frame] display:true];
+
+    //
+    [child.contentView addSubview:ctrler.view];
+    [child.contentView setNeedsLayout:true];
+
+    //
+    [child makeKeyAndOrderFront:self];
+
+
+    //
+    return ctrler;
+}
+//
+
 
 //
-//    NSNib *nib;
-//    if (!(nib = [[NSNib alloc] initWithNibNamed:[NSString stringWithUTF8String:nibName] bundle:bundle]))
-//        return NULL;
 //
-//    //
-//    NSArray *objects;
-//    if (![nib instantiateWithOwner:NULL topLevelObjects:&objects])
-//        return NULL;
-//
-//    //
-//    NSViewController *ctrler = NULL;
-//
-//    for (id object in objects)
+-(id  ) addView        : (const char *) nibName :(NSBundle *) bundle
+{
+    log_todo ();
+    exit (1);
+
+    return NULL;
+
+//    if ( ![NSThread isMainThread] )
 //    {
-//        if (![object isKindOfClass:[NSViewController class]])
-//            continue;
+//        __block id rtn;
+//        dispatch_sync (dispatch_get_main_queue(), ^{
+//            rtn = [ self addView :nibName :bundle];
+//        });
 //
-//        //
-//        ctrler = (NSViewController *) object;
-//        if (ctrler.view == NULL)
-//        {
-//            ctrler = NULL;
-//            continue;
-//        }
-//
-//        [self createWindow:ctrler];
-//        break;
+//        return rtn;
 //    }
 //
-    return ctrler;
+//    //
+//    NSViewController *ctrler;
+//    if ((ctrler = [[NSViewController alloc] initWithNibName:[NSString stringWithUTF8String:nibName] bundle:bundle]))
+//    {
+//        NSLog (@"%@", ctrler);
+//        NSLog (@"%@", ctrler.view);
+//
+////        //
+////        if ([ctrler.view respondsToSelector:@selector (bootstrap)])
+////            [ctrler.view performSelector:@selector(bootstrap) withObject:NULL];
+//
+//        //
+//        [self createWindow:ctrler];
+//    }
+//
+////
+////    NSNib *nib;
+////    if (!(nib = [[NSNib alloc] initWithNibNamed:[NSString stringWithUTF8String:nibName] bundle:bundle]))
+////        return NULL;
+////
+////    //
+////    NSArray *objects;
+////    if (![nib instantiateWithOwner:NULL topLevelObjects:&objects])
+////        return NULL;
+////
+////    //
+////    NSViewController *ctrler = NULL;
+////
+////    for (id object in objects)
+////    {
+////        if (![object isKindOfClass:[NSViewController class]])
+////            continue;
+////
+////        //
+////        ctrler = (NSViewController *) object;
+////        if (ctrler.view == NULL)
+////        {
+////            ctrler = NULL;
+////            continue;
+////        }
+////
+////        [self createWindow:ctrler];
+////        break;
+////    }
+////
+//    return ctrler;
 }
 //
 
@@ -338,7 +413,7 @@ void    *worker_thread ( callback_plugin *callback )
 
 -(BOOL)windowShouldClose :(NSWindow *)sender
 {
-    NSLog (@"%s : %@", __PRETTY_FUNCTION__, sender);
+    log_object (sender); 
 
     //
     sender.contentView    = NULL;

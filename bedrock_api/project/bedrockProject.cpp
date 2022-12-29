@@ -272,14 +272,14 @@ void           bedrockProject::import          ( const char *workingPath )
     //
     workerQueue.build();
 
-workerQueue.pause();
-for (uint32_t idx = 0; idx < 150; idx += 1)
-    workerQueue.enqueue ([] ( resource_job * ) -> void { sleep (1); });
-workerQueue.start(); 
+//workerQueue.pause();
+//for (uint32_t idx = 0; idx < 150; idx += 1)
+//    workerQueue.enqueue ([] ( resource_job * ) -> void { sleep (1000); });
+//workerQueue.start(); 
 
     for (std::string key : _root_["objects"])
     {
-        __uuid__ uuid;
+        bedrock_uuid uuid;
         if ((6 != sscanf (key.c_str(), "%8x-%4hx-%4hx-%4hx-%8x%4hx", &uuid.i.u0, &uuid.i.u1, &uuid.i.u2, &uuid.i.u3, &uuid.i.u4, &uuid.i.u5)))
             continue;
 

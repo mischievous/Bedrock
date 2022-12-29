@@ -14,8 +14,10 @@
 
 //
 //
-bedrockPlugin:: bedrockPlugin ( NSBundle *bundle, bedrock *owner, void *library ) : bundle(bundle), owner ( owner ), library (library)
+bedrockPlugin:: bedrockPlugin ( NSBundle *bundle, void *library ) : bundle(bundle), library (library)
 {
+    //
+    owner = (bedrock *) [NSApplication sharedApplication];
 }
 //
 
@@ -35,16 +37,16 @@ bedrockPlugin::~bedrockPlugin ( void )
 #pragma mark public
 //
 //
-void      bedrockPlugin::plugin           ( __uuid__ uuid, const char *name )
+void      bedrockPlugin::plugin           ( bedrock_uuid uuid, const char *name )
 {
-    ::plugin (uuid, name, FACTORY, library);
+    ::plugin ( uuid, name, FACTORY, library );
 }
 //
 
 
 //
 //
-void     *bedrockPlugin::plugin           ( __uuid__ uuid )
+void     *bedrockPlugin::plugin           ( bedrock_uuid uuid )
 {
     return ::plugin ( uuid );
 }
@@ -134,10 +136,10 @@ void      bedrockPlugin::performMenu      ( const std::vector <std::string> path
 //
 
 
-//
-//
-bedrockProject *bedrockPlugin::addProject ( const char *path, const char *root )
-{
-    return [owner addProject :path :root];
-}
-//
+////
+////
+//bedrockProject *bedrockPlugin::addProject ( const char *path, const char *root )
+//{
+//    return [owner addProject :path :root];
+//}
+////

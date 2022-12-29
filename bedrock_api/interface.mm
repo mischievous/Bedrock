@@ -26,7 +26,7 @@ Class     hasManager ( void )
 
 //
 //
-void      plugin ( __uuid__ uuid, const char *name, const char *factory, void *library )
+void      plugin ( bedrock_uuid uuid, const char *name, const char *factory, void *library )
 {
     Class pluginManager;
     if (! (pluginManager = hasManager()) )
@@ -47,7 +47,7 @@ void      plugin ( __uuid__ uuid, const char *name, const char *factory, void *l
 
 //
 //
-void     *plugin ( __uuid__ uuid )
+void     *plugin ( bedrock_uuid uuid )
 {
     Class pluginManager;
     if (! (pluginManager = hasManager()) )

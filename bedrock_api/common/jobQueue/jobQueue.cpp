@@ -180,7 +180,7 @@ void      jobQueue::build       ( void )
 {
     //
     uint32_t total = 0;
-    uint32_t count = resources.size();
+    uint32_t count = (uint32_t) resources.size();
     for (uint32_t row = 0; row < count; row += 1)
     {
         for (uint32_t col = 0; col < resources[row]->count; col += 1)

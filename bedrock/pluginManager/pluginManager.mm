@@ -11,11 +11,13 @@
 #import <dlfcn.h>
 
 //
+#import "log.h"
+
+//
 #import "pluginManager.h"
 
 //
-//#define FACTORY         ("_ZN%lu%@%lu%@FactoryEP8NSBundleP7bedrockPv")
-#define FACTORY         ("_ZN%lu%s7factoryEP8NSBundleP7bedrockPv")
+#define FACTORY         ("_ZN%lu%s7factoryEP8NSBundlePv")
 #define PRINCIPAL_CLASS (@"bedrockClass")
 
 //
@@ -53,7 +55,7 @@ static pluginManager *singleton = NULL;
 {
     if (self == [pluginManager class])
     {
-        NSLog (@"%s : %@", __FUNCTION__, self);
+        log_void ();
     }
 }
 //
@@ -126,7 +128,7 @@ static pluginManager *singleton = NULL;
 //            bundles   = [NSMutableArray arrayWithCapacity:0];
 
             //
-            NSLog (@"%s : %@", __FUNCTION__, self);
+            log_self();
         }
     }
 
@@ -146,7 +148,7 @@ static pluginManager *singleton = NULL;
 
     //
     bedrockPlugin *plugin;
-    plugin = (bedrockPlugin *) factory ( bundle, owner, handle );
+    plugin = (bedrockPlugin *) factory ( bundle, handle );
 }
 //
 
@@ -206,9 +208,6 @@ sleep (1);
 
     //
     [owner secureSplash];
-
-
-//NSLog (@"%@", bundles);
 }
 //
 

@@ -8,12 +8,10 @@
 #ifndef INTERFACE
 #define INTERFACE
 
-#include "uuid.h"
+#include "bedrock_uuid.h"
 
 //
-extern void  plugin ( __uuid__ uuid, const char *name, const char *factory, void *library );
-extern void *plugin ( __uuid__ uuid );
-
-
+extern void  plugin ( bedrock_uuid uuid, const char *name, const char *factory, void *library );
+extern void *plugin ( bedrock_uuid uuid );
 
 #endif /* interface_h */

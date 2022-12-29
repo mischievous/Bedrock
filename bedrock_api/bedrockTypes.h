@@ -9,10 +9,10 @@
 #include <string>
 
 //
-#include "uuid.h"
+#include "bedrock_uuid.h"
 
 //
-#ifndef BEDROCK_TYPES
+#ifndef BEDROCK_TYPESk
 #define BEDROCK_TYPES
 
 //

@@ -11,7 +11,7 @@
 #include "bedrock_uuid.h"
 
 //
-#define PLUGIN_TYPE ( __uuid__ {.d064.u0 = 0xc34bcfcb4e7ad414, .d064.u1 = 0xdc86856164af2adf } )
+#define PLUGIN_TYPE ( bedrock_uuid {.d064.u0 = 0xc34bcfcb4e7ad414, .d064.u1 = 0xdc86856164af2adf } )
 
 
 //

@@ -22,12 +22,34 @@
 		A82AFDB82893095D00FACC18 /* project.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82AFDB72893095D00FACC18 /* project.xib */; };
 		A85A6E692899BE0400537908 /* cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85A6E682899BE0400537908 /* cell.xib */; };
 		A85A6E722899D12600537908 /* cellView.mm in Sources */ = {isa = PBXBuildFile; fileRef = A85A6E712899D12600537908 /* cellView.mm */; };
+		A85AEF0F295DE85C007BBD99 /* log.h in Headers */ = {isa = PBXBuildFile; fileRef = A85AEF0C295DE85B007BBD99 /* log.h */; };
+		A85AEF10295DE85C007BBD99 /* logger.h in Headers */ = {isa = PBXBuildFile; fileRef = A85AEF0D295DE85B007BBD99 /* logger.h */; };
+		A85AEF11295DE85C007BBD99 /* logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A85AEF0E295DE85C007BBD99 /* logger.cpp */; };
+		A85AEF17295DED00007BBD99 /* dataBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A85AEF15295DED00007BBD99 /* dataBuffer.cpp */; };
+		A85AEF18295DED00007BBD99 /* dataBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = A85AEF16295DED00007BBD99 /* dataBuffer.h */; };
+		A85AEF1C295DED0D007BBD99 /* crc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A85AEF1A295DED0D007BBD99 /* crc.cpp */; };
+		A85AEF1D295DED0D007BBD99 /* crc.h in Headers */ = {isa = PBXBuildFile; fileRef = A85AEF1B295DED0D007BBD99 /* crc.h */; };
+		A8618A71295DD4CB008D1A2B /* json.h in Headers */ = {isa = PBXBuildFile; fileRef = A8618A6D295DD4CB008D1A2B /* json.h */; };
+		A8618A72295DD4CB008D1A2B /* json.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A8618A6E295DD4CB008D1A2B /* json.hpp */; };
+		A8618A73295DD4CB008D1A2B /* json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8618A6F295DD4CB008D1A2B /* json.cpp */; };
+		A8618A74295DD4CB008D1A2B /* bedrock_json.h in Headers */ = {isa = PBXBuildFile; fileRef = A8618A70295DD4CB008D1A2B /* bedrock_json.h */; };
+		A8618A77295DD4F6008D1A2B /* tss.h in Headers */ = {isa = PBXBuildFile; fileRef = A8618A76295DD4F6008D1A2B /* tss.h */; };
+		A8618A7D295DD87D008D1A2B /* bedrock_uuid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8618A7B295DD87D008D1A2B /* bedrock_uuid.cpp */; };
+		A8618A7E295DD87D008D1A2B /* bedrock_uuid.h in Headers */ = {isa = PBXBuildFile; fileRef = A8618A7C295DD87D008D1A2B /* bedrock_uuid.h */; };
 		A86A8756292D0CB1004C930B /* utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A86A8754292D0CB1004C930B /* utilities.h */; };
 		A86A8757292D0CB1004C930B /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A86A8755292D0CB1004C930B /* utilities.cpp */; };
 		A86D6B70293112ED000E7FE1 /* jobQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A86D6B6E293112ED000E7FE1 /* jobQueue.cpp */; };
 		A86D6B71293112ED000E7FE1 /* jobQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = A86D6B6F293112ED000E7FE1 /* jobQueue.h */; };
 		A86D6B79293248AF000E7FE1 /* projectQueue.mm in Sources */ = {isa = PBXBuildFile; fileRef = A86D6B77293248AF000E7FE1 /* projectQueue.mm */; };
 		A86D6B8C293263E1000E7FE1 /* interface.mm in Sources */ = {isa = PBXBuildFile; fileRef = A86D6B87293262E5000E7FE1 /* interface.mm */; };
+		A86D6B9029327168000E7FE1 /* queue.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86D6B8F29327168000E7FE1 /* queue.xib */; };
+		A86D6B94293271E8000E7FE1 /* queueRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86D6B93293271E8000E7FE1 /* queueRow.xib */; };
+		A86D6B9A29328593000E7FE1 /* warlock.mm in Sources */ = {isa = PBXBuildFile; fileRef = A86D6B9929328593000E7FE1 /* warlock.mm */; };
+		A86D6BA629339B1C000E7FE1 /* warlockView.mm in Sources */ = {isa = PBXBuildFile; fileRef = A86D6BA529339B1C000E7FE1 /* warlockView.mm */; };
+		A86D6BAB29339D69000E7FE1 /* warlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86D6BAA29339D69000E7FE1 /* warlock.xib */; };
+		A86D6BB32933A6F2000E7FE1 /* warlockChild.m in Sources */ = {isa = PBXBuildFile; fileRef = A86D6BB22933A6F2000E7FE1 /* warlockChild.m */; };
+		A86D6BBA2933B30B000E7FE1 /* warlockTab.mm in Sources */ = {isa = PBXBuildFile; fileRef = A86D6BB92933B30B000E7FE1 /* warlockTab.mm */; };
+		A86D6BBF2933B80D000E7FE1 /* projectView.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8CC068B2896C72600C0D2B8 /* projectView.mm */; };
 		A8A4E9F9291E8FEE00FD8EB8 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = A8A4E9F8291E8FEE00FD8EB8 /* readme.txt */; };
 		A8A4EA07291E9CA600FD8EB8 /* compiler in Resources */ = {isa = PBXBuildFile; fileRef = A8A4EA06291E9CA600FD8EB8 /* compiler */; };
 		A8A4EA0E291E9D0100FD8EB8 /* linker in Resources */ = {isa = PBXBuildFile; fileRef = A8A4EA0C291E9D0100FD8EB8 /* linker */; };
@@ -44,10 +66,8 @@
 		A8CC06752895E21500C0D2B8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80591A22892CA1D0023DDD5 /* Cocoa.framework */; };
 		A8CC06812895E28200C0D2B8 /* libplugin.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CC065D2895E10800C0D2B8 /* libplugin.dylib */; };
 		A8CC06822895E28200C0D2B8 /* libplugin.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A8CC065D2895E10800C0D2B8 /* libplugin.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		A8CC068C2896C72600C0D2B8 /* projectView.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8CC068B2896C72600C0D2B8 /* projectView.mm */; };
 		A8CC06902896C7FB00C0D2B8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80591A22892CA1D0023DDD5 /* Cocoa.framework */; };
 		A8E2EAA3292E60050043C470 /* projectObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E64E6729184CBD00C2E6C2 /* projectObject.cpp */; };
-		A8E2EAC3292EC1AA0043C470 /* uuid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E2EA8E292E55110043C470 /* uuid.cpp */; };
 		A8FDDFC32892CF8D00AB7629 /* pluginManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8FDDFC22892CF8D00AB7629 /* pluginManager.mm */; };
 		A8FDDFE02892DAA300AB7629 /* workspaces.bedrock in CopyFiles */ = {isa = PBXBuildFile; fileRef = A8FDDFA72892CCF600AB7629 /* workspaces.bedrock */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -137,6 +157,20 @@
 		A85A6E682899BE0400537908 /* cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cell.xib; sourceTree = "<group>"; };
 		A85A6E702899D12600537908 /* cellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cellView.h; sourceTree = "<group>"; };
 		A85A6E712899D12600537908 /* cellView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = cellView.mm; sourceTree = "<group>"; };
+		A85AEF0C295DE85B007BBD99 /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
+		A85AEF0D295DE85B007BBD99 /* logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logger.h; sourceTree = "<group>"; };
+		A85AEF0E295DE85C007BBD99 /* logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = logger.cpp; sourceTree = "<group>"; };
+		A85AEF15295DED00007BBD99 /* dataBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dataBuffer.cpp; sourceTree = "<group>"; };
+		A85AEF16295DED00007BBD99 /* dataBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataBuffer.h; sourceTree = "<group>"; };
+		A85AEF1A295DED0D007BBD99 /* crc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = crc.cpp; sourceTree = "<group>"; };
+		A85AEF1B295DED0D007BBD99 /* crc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crc.h; sourceTree = "<group>"; };
+		A8618A6D295DD4CB008D1A2B /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		A8618A6E295DD4CB008D1A2B /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
+		A8618A6F295DD4CB008D1A2B /* json.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json.cpp; sourceTree = "<group>"; };
+		A8618A70295DD4CB008D1A2B /* bedrock_json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bedrock_json.h; sourceTree = "<group>"; };
+		A8618A76295DD4F6008D1A2B /* tss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tss.h; sourceTree = "<group>"; };
+		A8618A7B295DD87D008D1A2B /* bedrock_uuid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bedrock_uuid.cpp; sourceTree = "<group>"; };
+		A8618A7C295DD87D008D1A2B /* bedrock_uuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bedrock_uuid.h; sourceTree = "<group>"; };
 		A86A8754292D0CB1004C930B /* utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utilities.h; sourceTree = "<group>"; };
 		A86A8755292D0CB1004C930B /* utilities.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utilities.cpp; sourceTree = "<group>"; };
 		A86D6B6E293112ED000E7FE1 /* jobQueue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = jobQueue.cpp; sourceTree = "<group>"; };
@@ -146,10 +180,20 @@
 		A86D6B7C29324B52000E7FE1 /* quiQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = quiQueue.h; sourceTree = "<group>"; };
 		A86D6B86293262E5000E7FE1 /* interface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = interface.h; sourceTree = "<group>"; };
 		A86D6B87293262E5000E7FE1 /* interface.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = interface.mm; sourceTree = "<group>"; };
+		A86D6B8F29327168000E7FE1 /* queue.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = queue.xib; sourceTree = "<group>"; };
+		A86D6B93293271E8000E7FE1 /* queueRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = queueRow.xib; sourceTree = "<group>"; };
+		A86D6B9829328593000E7FE1 /* warlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = warlock.h; sourceTree = "<group>"; };
+		A86D6B9929328593000E7FE1 /* warlock.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = warlock.mm; sourceTree = "<group>"; };
+		A86D6BA429339B1C000E7FE1 /* warlockView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = warlockView.h; sourceTree = "<group>"; };
+		A86D6BA529339B1C000E7FE1 /* warlockView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = warlockView.mm; sourceTree = "<group>"; };
+		A86D6BAA29339D69000E7FE1 /* warlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = warlock.xib; sourceTree = "<group>"; };
+		A86D6BB12933A6F2000E7FE1 /* warlockChild.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = warlockChild.h; sourceTree = "<group>"; };
+		A86D6BB22933A6F2000E7FE1 /* warlockChild.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = warlockChild.m; sourceTree = "<group>"; };
+		A86D6BB82933B30B000E7FE1 /* warlockTab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = warlockTab.h; sourceTree = "<group>"; };
+		A86D6BB92933B30B000E7FE1 /* warlockTab.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = warlockTab.mm; sourceTree = "<group>"; };
 		A8710202292ECDB1006DE703 /* libboost_system.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libboost_system.a; sourceTree = "<group>"; };
 		A8710203292ECDB1006DE703 /* libboost_filesystem.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libboost_filesystem.a; sourceTree = "<group>"; };
 		A8710204292ECDB1006DE703 /* libboost_program_options.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libboost_program_options.a; sourceTree = "<group>"; };
-		A8A4E9E5291D639600FD8EB8 /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
 		A8A4E9F8291E8FEE00FD8EB8 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		A8A4EA06291E9CA600FD8EB8 /* compiler */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = compiler; sourceTree = "<group>"; };
 		A8A4EA0C291E9D0100FD8EB8 /* linker */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = linker; sourceTree = "<group>"; };
@@ -165,8 +209,6 @@
 		A8CC065D2895E10800C0D2B8 /* libplugin.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libplugin.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8CC068A2896C72600C0D2B8 /* projectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = projectView.h; sourceTree = "<group>"; };
 		A8CC068B2896C72600C0D2B8 /* projectView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = projectView.mm; sourceTree = "<group>"; };
-		A8E2EA8E292E55110043C470 /* uuid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uuid.cpp; sourceTree = "<group>"; };
-		A8E2EA8F292E55110043C470 /* uuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uuid.h; sourceTree = "<group>"; };
 		A8E2EA94292E56D20043C470 /* bedrockTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bedrockTypes.h; sourceTree = "<group>"; };
 		A8E2EAAE292EC0F20043C470 /* cppparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cppparser.h; sourceTree = "<group>"; };
 		A8E2EAB1292EC0FC0043C470 /* libcppparser.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcppparser.a; sourceTree = "<group>"; };
@@ -254,6 +296,7 @@
 				A805918D2892C5F00023DDD5 /* Info.plist */,
 				A80591902892C5F00023DDD5 /* bedrock.entitlements */,
 				A805918A2892C5F00023DDD5 /* MainMenu.xib */,
+				A86D6B972932855C000E7FE1 /* warlock */,
 				A8FDDFC02892CF4D00AB7629 /* pluginManager */,
 				A80591852892C5EF0023DDD5 /* bedrock.h */,
 				A80591862892C5EF0023DDD5 /* bedrock.mm */,
@@ -301,6 +344,53 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		A85AEF13295DECD6007BBD99 /* hash */ = {
+			isa = PBXGroup;
+			children = (
+				A85AEF1A295DED0D007BBD99 /* crc.cpp */,
+				A85AEF1B295DED0D007BBD99 /* crc.h */,
+			);
+			path = hash;
+			sourceTree = "<group>";
+		};
+		A85AEF14295DECF0007BBD99 /* buffer */ = {
+			isa = PBXGroup;
+			children = (
+				A85AEF15295DED00007BBD99 /* dataBuffer.cpp */,
+				A85AEF16295DED00007BBD99 /* dataBuffer.h */,
+			);
+			path = buffer;
+			sourceTree = "<group>";
+		};
+		A8618A6C295DD4A5008D1A2B /* json */ = {
+			isa = PBXGroup;
+			children = (
+				A8618A70295DD4CB008D1A2B /* bedrock_json.h */,
+				A8618A6F295DD4CB008D1A2B /* json.cpp */,
+				A8618A6D295DD4CB008D1A2B /* json.h */,
+				A8618A6E295DD4CB008D1A2B /* json.hpp */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		A8618A79295DD5A1008D1A2B /* logger */ = {
+			isa = PBXGroup;
+			children = (
+				A85AEF0C295DE85B007BBD99 /* log.h */,
+				A85AEF0E295DE85C007BBD99 /* logger.cpp */,
+				A85AEF0D295DE85B007BBD99 /* logger.h */,
+			);
+			path = logger;
+			sourceTree = "<group>";
+		};
+		A8618A7A295DD5BF008D1A2B /* with */ = {
+			isa = PBXGroup;
+			children = (
+				A8A4EA14291EE1EC00FD8EB8 /* with.h */,
+			);
+			path = with;
+			sourceTree = "<group>";
+		};
 		A86A8753292D0C96004C930B /* utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +403,7 @@
 		A86D6B6D293112CE000E7FE1 /* jobQueue */ = {
 			isa = PBXGroup;
 			children = (
+				A8618A76295DD4F6008D1A2B /* tss.h */,
 				A86D6B7C29324B52000E7FE1 /* quiQueue.h */,
 				A86D6B6F293112ED000E7FE1 /* jobQueue.h */,
 				A86D6B6E293112ED000E7FE1 /* jobQueue.cpp */,
@@ -323,10 +414,28 @@
 		A86D6B76293247BF000E7FE1 /* projectQueue */ = {
 			isa = PBXGroup;
 			children = (
+				A86D6B8F29327168000E7FE1 /* queue.xib */,
+				A86D6B93293271E8000E7FE1 /* queueRow.xib */,
 				A86D6B78293248AF000E7FE1 /* projectQueue.h */,
 				A86D6B77293248AF000E7FE1 /* projectQueue.mm */,
 			);
 			path = projectQueue;
+			sourceTree = "<group>";
+		};
+		A86D6B972932855C000E7FE1 /* warlock */ = {
+			isa = PBXGroup;
+			children = (
+				A86D6BAA29339D69000E7FE1 /* warlock.xib */,
+				A86D6BB82933B30B000E7FE1 /* warlockTab.h */,
+				A86D6BB92933B30B000E7FE1 /* warlockTab.mm */,
+				A86D6BA429339B1C000E7FE1 /* warlockView.h */,
+				A86D6BA529339B1C000E7FE1 /* warlockView.mm */,
+				A86D6B9829328593000E7FE1 /* warlock.h */,
+				A86D6B9929328593000E7FE1 /* warlock.mm */,
+				A86D6BB12933A6F2000E7FE1 /* warlockChild.h */,
+				A86D6BB22933A6F2000E7FE1 /* warlockChild.m */,
+			);
+			path = warlock;
 			sourceTree = "<group>";
 		};
 		A8CC063E2895BE6100C0D2B8 /* images */ = {
@@ -341,8 +450,15 @@
 		A8E2EA8A292E53D40043C470 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				A85AEF14295DECF0007BBD99 /* buffer */,
+				A85AEF13295DECD6007BBD99 /* hash */,
+				A86D6B6D293112CE000E7FE1 /* jobQueue */,
+				A8618A6C295DD4A5008D1A2B /* json */,
+				A8618A79295DD5A1008D1A2B /* logger */,
+				A8E64E6929184CBD00C2E6C2 /* task */,
+				A86A8753292D0C96004C930B /* utilities */,
 				A8E2EA8B292E54E40043C470 /* uuid */,
-				A8E2EA94292E56D20043C470 /* bedrockTypes.h */,
+				A8618A7A295DD5BF008D1A2B /* with */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -350,8 +466,8 @@
 		A8E2EA8B292E54E40043C470 /* uuid */ = {
 			isa = PBXGroup;
 			children = (
-				A8E2EA8E292E55110043C470 /* uuid.cpp */,
-				A8E2EA8F292E55110043C470 /* uuid.h */,
+				A8618A7B295DD87D008D1A2B /* bedrock_uuid.cpp */,
+				A8618A7C295DD87D008D1A2B /* bedrock_uuid.h */,
 			);
 			path = uuid;
 			sourceTree = "<group>";
@@ -408,16 +524,13 @@
 			children = (
 				A8E2EAAB292EC05D0043C470 /* cppparser */,
 				A8E2EA8A292E53D40043C470 /* common */,
-				A86A8753292D0C96004C930B /* utilities */,
+				A8E2EA94292E56D20043C470 /* bedrockTypes.h */,
 				A8E64E5529184CBD00C2E6C2 /* clang */,
-				A86D6B6D293112CE000E7FE1 /* jobQueue */,
 				A8E64E6429184CBD00C2E6C2 /* project */,
-				A8E64E6929184CBD00C2E6C2 /* task */,
 				A8E64E6329184CBD00C2E6C2 /* api.h */,
 				A8E64E6229184CBD00C2E6C2 /* api.mm */,
 				A86D6B86293262E5000E7FE1 /* interface.h */,
 				A86D6B87293262E5000E7FE1 /* interface.mm */,
-				A8A4EA14291EE1EC00FD8EB8 /* with.h */,
 			);
 			path = bedrock_api;
 			sourceTree = "<group>";
@@ -434,7 +547,6 @@
 		A8E64E6429184CBD00C2E6C2 /* project */ = {
 			isa = PBXGroup;
 			children = (
-				A8A4E9E5291D639600FD8EB8 /* json.hpp */,
 				A8E64E6829184CBD00C2E6C2 /* projectObject.h */,
 				A8E64E6729184CBD00C2E6C2 /* projectObject.cpp */,
 				A8E64E6529184CBD00C2E6C2 /* bedrockProject.h */,
@@ -483,12 +595,21 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85AEF18295DED00007BBD99 /* dataBuffer.h in Headers */,
+				A8618A77295DD4F6008D1A2B /* tss.h in Headers */,
 				A80E191C29184E8D0002ED80 /* api.h in Headers */,
 				A80E191629184E7B0002ED80 /* projectObject.h in Headers */,
 				A86D6B71293112ED000E7FE1 /* jobQueue.h in Headers */,
 				A80E191529184E7B0002ED80 /* bedrockProject.h in Headers */,
+				A8618A74295DD4CB008D1A2B /* bedrock_json.h in Headers */,
 				A80E191A29184E800002ED80 /* bedrockTask.h in Headers */,
+				A8618A7E295DD87D008D1A2B /* bedrock_uuid.h in Headers */,
+				A85AEF1D295DED0D007BBD99 /* crc.h in Headers */,
+				A8618A72295DD4CB008D1A2B /* json.hpp in Headers */,
+				A85AEF0F295DE85C007BBD99 /* log.h in Headers */,
+				A8618A71295DD4CB008D1A2B /* json.h in Headers */,
 				A86A8756292D0CB1004C930B /* utilities.h in Headers */,
+				A85AEF10295DE85C007BBD99 /* logger.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +721,7 @@
 			files = (
 				A80591892892C5F00023DDD5 /* Assets.xcassets in Resources */,
 				A805918C2892C5F00023DDD5 /* MainMenu.xib in Resources */,
+				A86D6BAB29339D69000E7FE1 /* warlock.xib in Resources */,
 				A8CC06402895BE8A00C0D2B8 /* splashDragon.png in Resources */,
 				A8CC06442895C1A300C0D2B8 /* splashGears.png in Resources */,
 			);
@@ -611,6 +733,7 @@
 			files = (
 				A82AFDB82893095D00FACC18 /* project.xib in Resources */,
 				A829459328BFE271009DE511 /* build.jpeg in Resources */,
+				A86D6B9029327168000E7FE1 /* queue.xib in Resources */,
 				A8A4EA07291E9CA600FD8EB8 /* compiler in Resources */,
 				A8A4EA26292055B800FD8EB8 /* fortran in Resources */,
 				A8A4EA18291F147700FD8EB8 /* bedrock_import in Resources */,
@@ -618,6 +741,7 @@
 				A8A4EA19291F147700FD8EB8 /* archiver in Resources */,
 				A8A4E9F9291E8FEE00FD8EB8 /* readme.txt in Resources */,
 				A85A6E692899BE0400537908 /* cell.xib in Resources */,
+				A86D6B94293271E8000E7FE1 /* queueRow.xib in Resources */,
 				A8A4EA0E291E9D0100FD8EB8 /* linker in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -650,6 +774,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8FDDFC32892CF8D00AB7629 /* pluginManager.mm in Sources */,
+				A86D6B9A29328593000E7FE1 /* warlock.mm in Sources */,
+				A86D6BA629339B1C000E7FE1 /* warlockView.mm in Sources */,
+				A86D6BBA2933B30B000E7FE1 /* warlockTab.mm in Sources */,
+				A86D6BB32933A6F2000E7FE1 /* warlockChild.m in Sources */,
 				A80591872892C5EF0023DDD5 /* bedrock.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,12 +786,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8E2EAC3292EC1AA0043C470 /* uuid.cpp in Sources */,
+				A85AEF1C295DED0D007BBD99 /* crc.cpp in Sources */,
 				A86A8757292D0CB1004C930B /* utilities.cpp in Sources */,
 				A80E191D29184E8D0002ED80 /* api.mm in Sources */,
+				A8618A73295DD4CB008D1A2B /* json.cpp in Sources */,
 				A8E2EAA3292E60050043C470 /* projectObject.cpp in Sources */,
 				A80E190429184E250002ED80 /* bedrockProject.cpp in Sources */,
+				A8618A7D295DD87D008D1A2B /* bedrock_uuid.cpp in Sources */,
+				A85AEF17295DED00007BBD99 /* dataBuffer.cpp in Sources */,
 				A86D6B8C293263E1000E7FE1 /* interface.mm in Sources */,
+				A85AEF11295DE85C007BBD99 /* logger.cpp in Sources */,
 				A86D6B70293112ED000E7FE1 /* jobQueue.cpp in Sources */,
 				A80E191929184E800002ED80 /* bedrockTask.cpp in Sources */,
 			);
@@ -673,9 +805,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A86D6BBF2933B80D000E7FE1 /* projectView.mm in Sources */,
 				A85A6E722899D12600537908 /* cellView.mm in Sources */,
 				A86D6B79293248AF000E7FE1 /* projectQueue.mm in Sources */,
-				A8CC068C2896C72600C0D2B8 /* projectView.mm in Sources */,
 				A8CC06512895D64B00C0D2B8 /* workspace.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
